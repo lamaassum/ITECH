@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>FMS</title>
+    </head>
+
+    <body>
+{% load i18n %}
+        <form method="post" action=".">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+               <input type="submit" value="{% trans 'Submit' %}" />
+        </form>
+</body>
+</html>
