@@ -12,3 +12,11 @@ def index(request):
     # Note that the first parameter is the template we wish to use.
 
     return render(request, 'FMS/index.html', context_dict)
+
+#do we need separate view for edited version
+def profile(request):
+
+#do we need separate view for edited version
+def project(request):
+
+def search(request):
