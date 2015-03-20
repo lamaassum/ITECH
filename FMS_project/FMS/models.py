@@ -53,4 +53,4 @@ class Application(models.Model):
 	project = models.ForeignKey(Project)
 	student = models.ForeignKey(Student)
 	def __unicode__(self):
-		return self.project.name +' '+ self.student.username
+		return self.project.title +' '+ self.student.user_profile.user.username
