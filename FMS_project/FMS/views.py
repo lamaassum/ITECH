@@ -13,10 +13,10 @@ def index(request):
 
     return render(request, 'FMS/index.html', context_dict)
 
-#do we need separate view for edited version
+'''#do we need separate view for edited version
 def profile(request):
 
 #do we need separate view for edited version
 def project(request):
 
-def search(request):
+def search(request):'''

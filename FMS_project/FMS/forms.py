@@ -9,7 +9,7 @@ class UserForm(forms.ModelForm):
 class UserProfileForm(forms.ModelForm):
 	class Meta:
 		model = UserProfile
-		fields = ('picture', 'about_me', 'website')
+		fields = ('picture', 'about_me', 'website', 'topic_choices')
 
 class SupervisorForm(forms.ModelForm):
 	class Meta:
@@ -24,4 +24,4 @@ class StudentProfileForm(forms.ModelForm):
 class ProjectForm(forms.ModelForm):
 	class Meta:
 		model = Project
-		fields = ('title', 'description', 'level')
+		fields = ('title', 'description', 'level', 'project_topic')
