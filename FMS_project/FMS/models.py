@@ -26,7 +26,7 @@ class Supervisor(models.Model):
 	job_title = models.CharField(max_length=128, blank=True)
 	availability= models.BooleanField(default=True)
 	def __unicode__(self):
-			return self.user_profile.username
+			return self.user_profile.user.username
 			
 class Project(models.Model):
 	title = models.CharField(max_length=128)
@@ -44,10 +44,10 @@ class Student (models.Model):
 	major = models.CharField(max_length = 128, blank=True)
 	advisor = models.CharField(max_length = 128, blank=True)
 	advisor_email = models.EmailField(max_length = 254, blank=True, null=True)
-	supervisor_choices = models.ManyToManyField(Supervisor,null=True)
-	project_choices = models.ManyToManyField(Project,null=True)
+	supervisor_choices = models.ManyToManyField(Supervisor,null=True, blank=True)
+	project_choices = models.ManyToManyField(Project,null=True, blank=True)
 	def __unicode__(self):
-		return self.user_profile.username
+		return self.user_profile.user.username
 		
 class Application(models.Model):
 	project = models.ForeignKey(Project)
