@@ -1,4 +1,5 @@
 from django.db.models import Q
+import re
 from django.shortcuts import render
 from django.http import HttpResponse
 from models import User, UserProfile, Supervisor, Student, Topic
