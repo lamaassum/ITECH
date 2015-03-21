@@ -14,19 +14,58 @@
             {% if profile.picture %}
             <img src="{{ MEDIA_URL }}{{ profile.picture }}"/>
             {% else %}
-                <img src="{{ MEDIA_URL }}/profile_images/avatar.jpg"/>
+                <img src="{{ MEDIA_URL }}profile_images/avatar.jpg"/>
             {% endif %}
 
             <h3>{{user.first_name}} {{user.last_name}}
-            {% if is_supervisor %}
+            {% if is_supervisor%}
+
+                {% if details.job_title %}
                 ({{ details.job_title }})
+                {% endif %}
             {% endif %}
             </h3>
-            <p>{{ user.email }}</p>
+
+            {% if not is_supervisor %}
+            <p>
+            {% if details.degree %}
+            {{ details.degree }}
+            {% endif %}
+
+            {% if details.major %}
+            in {{ details.major }}
+            {% endif %}
+            </p>
+
+
+            {% else %}
+
+                {% if details.availability %}
+                    <p>Available for supervision</p>
+                {% else %}
+                    <p>	Unavailable for supervision</p>
+                {% endif %}
+            {% endif %}
+
             <p>{{ profile.school_ID.name }}</p>
+            <p>{{ user.email }}</p>
+
 
             {% if profile.website %}
             <p>{{profile.website}}</p>
+
+            {% endif %}
+
+            {% if not is_supervisor %}
+
+            {% if details.advisor %}
+            <p>{{ details.advisor }}</p>
+            {% endif %}
+
+            {% if details.advisor_email %}
+            <p>{{ details.advisor_email }}</p>
+            {% endif %}
+
             {% endif %}
 
         </div>
