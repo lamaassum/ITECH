@@ -56,7 +56,12 @@ def search(request):
                     else:
                         query = query | qry
             found_entries = Topic.objects.filter(query).order_by('-name') # your model
-            return render(request, 'FMS/search.html', {'found_entries':found_entries})
+            outputList = []
+            for entry in found_entries:
+                found_supervisors = Supervisor.objects.filter(user_profile__topic_choices=entry)
+                print str(entry) + ':' + str(found_supervisors)
+
+            return render(request, 'FMS/search.html', {'found_supervisors':found_supervisors, 'found_entries':found_entries})
     else:
         form = SearchForm()
         return render(request, 'FMS/search.html', {'form':form})

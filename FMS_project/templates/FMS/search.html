@@ -4,10 +4,15 @@
 
 {% block title %}Index{% endblock %}
 
-        {% block body_block %}
+{% block body_block %}
 {% if found_entries %}
     {% for entry in found_entries %}
-        <li> {{ entry.name }} </li>
+        <ul>{{entry}}</ul>
+        {% for supervisor in found_supervisors %}
+            <li> {{ supervisor }}</li>
+        {% endfor %}
     {% endfor %}
+
+
 {% endif %}
-        {% endblock %}
+{% endblock %}
