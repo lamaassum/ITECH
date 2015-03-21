@@ -23,15 +23,17 @@ def my_profile(request):
         user = request.user
         userObj = User.objects.get(username=user.username)
         profile = UserProfile.objects.filter(user=userObj)[0]
-        
+        topics = profile.topic_choices.all()
+
         if not userObj.email.find('student'):
             details = Student.objects.filter(user_profile=profile)[0]
-
+            is_supervisor = False
         else:
             details = Supervisor.objects.filter(user_profile=profile)[0]
+            is_supervisor = True
 
 
-        context_dict = {'user': userObj, 'profile': profile, 'details': details}
+        context_dict = {'user': userObj, 'profile': profile, 'topics': topics, 'details': details, 'is_supervisor': is_supervisor}
 
         return render(request, 'FMS/profile.html', context_dict)
     else:

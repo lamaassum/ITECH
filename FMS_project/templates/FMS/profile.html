@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 
     <head>
@@ -9,8 +10,24 @@
        {% if user %}
 
         <div>
-            <h3>{{user.first_name}} {{user.last_name}}</h3>
+            {% if profile.picture %}
+            <img src="{{ MEDIA_URL }}{{ profile.picture }}"/>
+            {% else %}
+                <img src="{{ MEDIA_URL }}/profile_images/avatar.jpg"/>
+            {% endif %}
+
+            <h3>{{user.first_name}} {{user.last_name}}
+            {% if is_supervisor %}
+                ({{ details.job_title }})
+            {% endif %}
+            </h3>
+            <p>{{ user.email }}</p>
+            <p>{{ profile.school_ID.name }}</p>
+
+            {% if profile.website %}
             <p>{{profile.website}}</p>
+            {% endif %}
+
         </div>
 
        {% if profile.about_me %}
@@ -20,7 +37,14 @@
        </div>
        {% endif %}
 
-       
+        {% if topics %}
+            <h3>Interests</h3>
+            <ul>
+            {% for t in topics %}
+                <li>{{ t.name }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
 
        {% endif %}
 
