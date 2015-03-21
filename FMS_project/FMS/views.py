@@ -2,7 +2,6 @@ from django.db.models import Q
 from django.shortcuts import render
 from django.http import HttpResponse
 from models import User, UserProfile, Supervisor, Student, Topic
-import re
 from forms import SearchForm
 
 def index(request):
@@ -27,7 +26,8 @@ def my_profile(request):
         userObj = User.objects.get(username=user.username)
         profile = UserProfile.objects.filter(user=userObj)[0]
         topics = profile.topic_choices.all()
-        if not userObj.email.find('student'):
+
+        if not userObj.email.find('student') == -1:
             details = Student.objects.filter(user_profile=profile)[0]
             is_supervisor = False
         else:
