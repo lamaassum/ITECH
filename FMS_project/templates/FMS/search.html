@@ -6,13 +6,26 @@
 
 {% block body_block %}
 {% if found_entries %}
-    {% for entry in found_entries %}
-        <ul>{{entry}}</ul>
-        {% for supervisor in found_supervisors %}
-            <li> {{ supervisor }}</li>
-        {% endfor %}
-    {% endfor %}
+{% for entry in found_entries %}
+<div class="jumbotron">
+    <h2>{{entry}}</h2>
+    {% for supervisor in found_supervisors %}
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                {{ supervisor }}
+            </h3>
+        </div>
+        <div class="panel-body">
+            ::before
+            Panel content
+            ::after
+        </div>
 
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
 
 {% endif %}
 {% endblock %}
