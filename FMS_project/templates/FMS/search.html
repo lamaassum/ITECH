@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Index{% endblock %}
+
+        {% block body_block %}
+{% if found_entries %}
+    {% for entry in found_entries %}
+        <li> {{ entry.name }} </li>
+    {% endfor %}
+{% endif %}
+        {% endblock %}

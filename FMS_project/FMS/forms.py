@@ -1,6 +1,6 @@
 from django import forms
-from FMS.models import User, UserProfile, Supervisor, Student, Project
-
+from models import User, UserProfile, Supervisor, Student, Project
+'''
 class UserForm(forms.ModelForm):	
 	class Meta:
 		model = User
@@ -25,3 +25,7 @@ class ProjectForm(forms.ModelForm):
 	class Meta:
 		model = Project
 		fields = ('title', 'description', 'level', 'project_topic')
+'''
+class SearchForm(forms.Form):
+    search = forms.CharField()
+

@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
+from FMS import views
 
 urlpatterns = patterns('',
     # Examples:
@@ -10,6 +11,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^FMS/', include('FMS.urls')),
     (r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^search/$', views.search, name='search_for_something'),
+
     )
     
 if settings.DEBUG:

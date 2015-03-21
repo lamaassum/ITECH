@@ -1,6 +1,9 @@
+from django.db.models import Q
 from django.shortcuts import render
 from django.http import HttpResponse
-from FMS.models import User, UserProfile, Supervisor, Student
+from models import User, UserProfile, Supervisor, Student, Topic
+import re
+from forms import SearchForm
 
 def index(request):
 
@@ -24,20 +27,40 @@ def my_profile(request):
         userObj = User.objects.get(username=user.username)
         profile = UserProfile.objects.filter(user=userObj)[0]
         topics = profile.topic_choices.all()
-
         if not userObj.email.find('student'):
             details = Student.objects.filter(user_profile=profile)[0]
             is_supervisor = False
         else:
             details = Supervisor.objects.filter(user_profile=profile)[0]
             is_supervisor = True
-
-
         context_dict = {'user': userObj, 'profile': profile, 'topics': topics, 'details': details, 'is_supervisor': is_supervisor}
-
         return render(request, 'FMS/profile.html', context_dict)
     else:
         return HttpResponse("You are not logged in.")
+
+
+# views.py
+def search(request):
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            string = form.cleaned_data['search']
+            terms = re.compile(r'[^\s",;.:]+').findall(string)
+            fields = ['name', 'id'] # your field names
+            query = None
+            for term in terms:
+                for field in fields:
+                    qry = Q(**{'%s__icontains' % field: term})
+                    if query is None:
+                        query = qry
+                    else:
+                        query = query | qry
+            found_entries = Topic.objects.filter(query).order_by('-name') # your model
+            return render(request, 'FMS/search.html', {'found_entries':found_entries})
+    else:
+        form = SearchForm()
+        return render(request, 'FMS/search.html', {'form':form})
+
 
 '''#do we need separate view for edited version
 def project(request):
