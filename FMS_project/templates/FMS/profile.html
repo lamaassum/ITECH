@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>FMS</title>
+    </head>
+
+    <body>
+       {% if user %}
+
+        <div>
+            <h3>{{user.first_name}} {{user.last_name}}</h3>
+            <p>{{profile.website}}</p>
+        </div>
+
+       {% if profile.about_me %}
+       <div>
+           <h3>About Me</h3>
+           {{profile.about_me}}
+       </div>
+       {% endif %}
+
+       
+
+       {% endif %}
+
+    </body>
+
+</html>

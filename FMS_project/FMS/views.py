@@ -19,18 +19,23 @@ def index(request):
 
 #do we need separate view for edited version
 def my_profile(request):
-    user = request.user
-    user = User.getObjects(username=user.username)
-    profile = UserProfile.getObjects(user=user)
+    if request.user.is_authenticated():
+        user = request.user
+        userObj = User.objects.get(username=user.username)
+        profile = UserProfile.objects.filter(user=userObj)[0]
+        
+        if not userObj.email.find('student'):
+            details = Student.objects.filter(user_profile=profile)[0]
 
-    if user.email.find('student'):
-        details = Student.getObjects(user_profile=profile)
+        else:
+            details = Supervisor.objects.filter(user_profile=profile)[0]
+
+
+        context_dict = {'user': userObj, 'profile': profile, 'details': details}
+
+        return render(request, 'FMS/profile.html', context_dict)
     else:
-        details = Supervisor.getObjects(user_profile=profile)
-
-    context_dict = {'user': user, 'profile': profile, 'details': details}
-
-    return render(request, 'FMS/profile.html', context_dict)
+        return HttpResponse("You are not logged in.")
 
 '''#do we need separate view for edited version
 def project(request):
