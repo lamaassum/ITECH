@@ -43,7 +43,7 @@ def my_profile(request):
 
 # views.py
 def search(request):
-
+    user = request.user
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
