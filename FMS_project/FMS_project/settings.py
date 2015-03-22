@@ -44,8 +44,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'FMS',
     'registration',
-    'ajax_search',
-
 )
 
 MIDDLEWARE_CLASSES = (
