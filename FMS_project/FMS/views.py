@@ -123,7 +123,7 @@ def search(request):
                                 outputHTML.append('  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" '+str(settings.MEDIA_URL) + "profile_images/avatar.jpg" +' "/></div></a>')
                                 outputHTML.append('<dl>')
                                 try:
-                                    if str(x.user_profile.email) != '':
+                                    if str(x.user_profile.user.email) != '':
                                         outputHTML.append('<dt>' + str(x.user_profile.user.email) + '</dt>')
                                 except:
                                     print 'email not supplied'
@@ -149,7 +149,7 @@ def search(request):
                                         outputHTML.append(str(x.user_profile.about_me))
                                 except:
                                     print 'about me not supplied'
-                                outputHTML.append('</dl></div></div>')
+                                outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
                             outputHTML.append('</div>')
                             i= i+1
                             output = ''.join(outputHTML)
@@ -203,7 +203,7 @@ def search(request):
                                         outputHTML.append(str(x.user_profile.about_me))
                                 except:
                                     print 'about me not supplied'
-                                outputHTML.append('</dl></div></div>')
+                                outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
                             outputHTML.append('</div>')
                             i= i+1
                             output = ''.join(outputHTML)
@@ -262,7 +262,7 @@ def search(request):
                             outputHTML.append(str(profile.about_me))
                     except:
                         print 'about me not supplied'
-                    outputHTML.append('</dl></div></div>')
+                    outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
                 outputHTML.append('</div>')
 
                 output = ''.join(outputHTML)
