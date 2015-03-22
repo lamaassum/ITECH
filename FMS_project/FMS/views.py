@@ -39,6 +39,30 @@ def my_profile(request):
     else:
         return HttpResponse("You are not logged in.")
 
+#profile page
+def profile(request, user_name_slug):
+    context_dict = {}
+
+    try:
+        profile = UserProfile.objects.filter(slug=user_name_slug)[0]
+        topics = profile.topic_choices
+        user = profile.user
+
+        if not user.email.find('student') == -1:
+            details = Student.objects.filter(user_profile=profile)[0]
+            is_supervisor = False
+        else:
+            details = Supervisor.objects.filter(user_profile=profile)[0]
+            is_supervisor = True
+
+        context_dict = {'user': user, 'profile': profile, 'topics': topics, 'details': details, 'is_supervisor': is_supervisor}
+        return render(request, 'FMS/profile.html', context_dict)
+
+    except UserProfile.DoesNotExist:
+        pass
+    return
+
+
 
 # views.py
 def search(request):
