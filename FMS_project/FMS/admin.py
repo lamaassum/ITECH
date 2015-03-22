@@ -3,10 +3,10 @@ from models import School, Topic, UserProfile, Supervisor, Project, Student, App
 # Register your models here.
 
 class UserProfileAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug':('user.first_name'+" "+'user.first_name',)}
+    prepopulated_fields = {'slug':('user.first_name'+" "+'user.first_name'+" "+'user.id',)}
 
 class ProjectAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug':('title',)}
+    prepopulated_fields = {'slug':('title'+" "+'id',)}
 
 admin.site.register(School)
 admin.site.register(Topic)

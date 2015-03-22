@@ -19,11 +19,11 @@ class UserProfile (models.Model):
     picture =models.ImageField(upload_to='profile_images',blank=True)
     school_ID = models.ForeignKey(School)
     topic_choices = models.ManyToManyField(Topic)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(blank=True, unique=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.user.first_name+" "+self.user.last_name)
-        models.Model(UserProfile, self).save(*args, **kwargs)
+        self.slug = slugify(self.user.first_name+" "+self.user.last_name+" "+str(self.user.id))
+        super(UserProfile, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.user.username
@@ -45,11 +45,11 @@ class Project(models.Model):
     projectAssigned = models.BooleanField(default=False)
     project_topic = models.ManyToManyField(Topic)
 
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(blank=True, unique=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        models.Model(Project, self).save(*args, **kwargs)
+        self.slug = slugify(self.title+" "+str(self.id))
+        super(Project, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.title
