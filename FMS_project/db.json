@@ -1,1 +1,3091 @@
-[{"fields": {"model": "logentry", "name": "log entry", "app_label": "admin"}, "model": "contenttypes.contenttype", "pk": 1}, {"fields": {"model": "permission", "name": "permission", "app_label": "auth"}, "model": "contenttypes.contenttype", "pk": 2}, {"fields": {"model": "group", "name": "group", "app_label": "auth"}, "model": "contenttypes.contenttype", "pk": 3}, {"fields": {"model": "user", "name": "user", "app_label": "auth"}, "model": "contenttypes.contenttype", "pk": 4}, {"fields": {"model": "contenttype", "name": "content type", "app_label": "contenttypes"}, "model": "contenttypes.contenttype", "pk": 5}, {"fields": {"model": "session", "name": "session", "app_label": "sessions"}, "model": "contenttypes.contenttype", "pk": 6}, {"fields": {"model": "site", "name": "site", "app_label": "sites"}, "model": "contenttypes.contenttype", "pk": 7}, {"fields": {"model": "registrationprofile", "name": "registration profile", "app_label": "registration"}, "model": "contenttypes.contenttype", "pk": 8}, {"fields": {"model": "school", "name": "school", "app_label": "FMS"}, "model": "contenttypes.contenttype", "pk": 9}, {"fields": {"model": "topic", "name": "topic", "app_label": "FMS"}, "model": "contenttypes.contenttype", "pk": 10}, {"fields": {"model": "userprofile", "name": "user profile", "app_label": "FMS"}, "model": "contenttypes.contenttype", "pk": 11}, {"fields": {"model": "supervisor", "name": "supervisor", "app_label": "FMS"}, "model": "contenttypes.contenttype", "pk": 12}, {"fields": {"model": "project", "name": "project", "app_label": "FMS"}, "model": "contenttypes.contenttype", "pk": 13}, {"fields": {"model": "student", "name": "student", "app_label": "FMS"}, "model": "contenttypes.contenttype", "pk": 14}, {"fields": {"model": "application", "name": "application", "app_label": "FMS"}, "model": "contenttypes.contenttype", "pk": 15}, {"fields": {"expire_date": "2015-04-04T11:51:20.124Z", "session_data": "MDdhNTIwM2YyZmY4YmFlNjU1YzcwYjIxODUyMzQ1Yzg0OGNjYmNkODp7Il9hdXRoX3VzZXJfaGFzaCI6IjlhMDA4OWNlMGMzZDE5Mjc3MjY4ZTc4OTViZTk1MmU4M2FjNmUzMjQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"}, "model": "sessions.session", "pk": "2zzbssj4bi6uaqlr6ih5lrhobqm782el"}, {"fields": {"expire_date": "2015-04-03T11:19:54.571Z", "session_data": "MGI5MzBkZmNkOGJkZDc2MDQ0OTY2ODQ3ZGIxZmZhZDhjNzk1NzNiNjp7Il9hdXRoX3VzZXJfaGFzaCI6Ijk1OWYzYTY0YWU3NTVkM2U0MjQ5NmQxMDhhMjk4ZTI3NWRhZWEzMDIiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"}, "model": "sessions.session", "pk": "c2vwxh7y47jzuhdkf39ap9rmirgy3p2l"}, {"fields": {"expire_date": "2015-04-04T12:46:14.885Z", "session_data": "N2I0ZDkwZmY3ODYxZjNkOWUyMDc3Y2FmZTU3OWM2ODEwNDg2MmViYTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE1YTA0MzRhYWQ4NTlkMzgzMjFjZDYyN2QwZDk0Yzk1MDVkOTA0MGEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjE0fQ=="}, "model": "sessions.session", "pk": "jtxf9yef1jttlq93qdm1kjzeih3d09fp"}, {"fields": {"expire_date": "2015-03-01T20:36:38.291Z", "session_data": "ODdkNmY3MjY4MTE4NjEwNDQwMzgyYzAzOWQwYzE5N2M3ZWZjZTk4YTp7fQ=="}, "model": "sessions.session", "pk": "kzgtzfg6dd8mxj8fr5jo1pecizr45r19"}, {"fields": {"expire_date": "2015-04-03T15:08:03.410Z", "session_data": "Mzk3M2E5YTQ1YWViYThjMjEyNDdhYWEyZmVmN2M3ZTQxNjcyYmViNTp7Il9hdXRoX3VzZXJfaGFzaCI6IjgwM2Q2NzFkZTk5ZWZkYzY3YzY3ZWU5Y2JlNDgxNDcyY2NkZTE3YTEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"}, "model": "sessions.session", "pk": "pi421vn2ysxajyferk0rvhg35yvx9ygg"}, {"fields": {"expire_date": "2015-04-03T10:44:25.337Z", "session_data": "ZmViNzU1YzU4ODA1ZTk0ZDExODg3Y2Q0NWU1MjkxNDc2NjczZDNlYTp7Il9hdXRoX3VzZXJfaGFzaCI6ImVmOTAzYTA2NjBkYjI3ZTgxMjYyMDhmMmQ4YjJkYmI1MjA5N2QxMWMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"}, "model": "sessions.session", "pk": "v08p8na2a2d4e6xceenaa051sztcdje4"}, {"fields": {"domain": "127.0.0.1:8000", "name": "localhost.com"}, "model": "sites.site", "pk": 1}, {"fields": {"name": "School of Computing"}, "model": "FMS.school", "pk": 1}, {"fields": {"name": "School of Chemistry"}, "model": "FMS.school", "pk": 2}, {"fields": {"name": "Human Computer Interaction"}, "model": "FMS.topic", "pk": 1}, {"fields": {"name": "Internet Technologies"}, "model": "FMS.topic", "pk": 2}, {"fields": {"name": "Django"}, "model": "FMS.topic", "pk": 3}, {"fields": {"name": "Augmented Reality"}, "model": "FMS.topic", "pk": 4}, {"fields": {"name": "Information Retrieval"}, "model": "FMS.topic", "pk": 5}, {"fields": {"name": "Databases"}, "model": "FMS.topic", "pk": 6}, {"fields": {"name": "Neural Networks"}, "model": "FMS.topic", "pk": 7}, {"fields": {"name": "Graph Theory"}, "model": "FMS.topic", "pk": 8}, {"fields": {"name": "Virtual Reality"}, "model": "FMS.topic", "pk": 9}, {"fields": {"name": "Fuzzy Logic"}, "model": "FMS.topic", "pk": 10}, {"fields": {"name": "Compilers"}, "model": "FMS.topic", "pk": 11}, {"fields": {"name": "Emulation"}, "model": "FMS.topic", "pk": 12}, {"fields": {"job_title": "Senior Lecturer", "availability": true, "user_profile": 8}, "model": "FMS.supervisor", "pk": 1}, {"fields": {"job_title": "Lecturer", "availability": true, "user_profile": 2}, "model": "FMS.supervisor", "pk": 2}, {"fields": {"job_title": "Senior Lecturer", "availability": true, "user_profile": 5}, "model": "FMS.supervisor", "pk": 3}, {"fields": {"job_title": "Professor of Ethics", "availability": true, "user_profile": 6}, "model": "FMS.supervisor", "pk": 4}, {"fields": {"supervisor": 1, "description": "Visualization for Scottish Politics", "level": "Masters", "title": "Scottish Visualization Appplication", "projectAssigned": true, "project_topic": [1, 2]}, "model": "FMS.project", "pk": 1}, {"fields": {"supervisor": 4, "description": "Susceptibility to distraction and other task irrelevant information", "level": "Bachelors", "title": "Task Irrelevant Information in Augmented Reality", "projectAssigned": false, "project_topic": [1, 9]}, "model": "FMS.project", "pk": 2}, {"fields": {"major": "Computing Science", "degree": "Masters", "user_profile": 3, "supervisor_choices": [], "project_choices": [], "advisor": "Stephen Brewster", "advisor_email": ""}, "model": "FMS.student", "pk": 2}, {"fields": {"major": "Computing Science", "degree": "Masters", "user_profile": 4, "supervisor_choices": [], "project_choices": [], "advisor": "", "advisor_email": ""}, "model": "FMS.student", "pk": 3}, {"fields": {"major": "IT", "degree": "Masters", "user_profile": 7, "supervisor_choices": [], "project_choices": [], "advisor": "", "advisor_email": ""}, "model": "FMS.student", "pk": 4}, {"fields": {"major": "IT", "degree": "Masters", "user_profile": 1, "supervisor_choices": [], "project_choices": [], "advisor": "", "advisor_email": ""}, "model": "FMS.student", "pk": 5}, {"fields": {"project": 2, "student": 2}, "model": "FMS.application", "pk": 2}, {"fields": {"project": 1, "student": 3}, "model": "FMS.application", "pk": 3}, {"fields": {"codename": "add_logentry", "name": "Can add log entry", "content_type": 1}, "model": "auth.permission", "pk": 1}, {"fields": {"codename": "change_logentry", "name": "Can change log entry", "content_type": 1}, "model": "auth.permission", "pk": 2}, {"fields": {"codename": "delete_logentry", "name": "Can delete log entry", "content_type": 1}, "model": "auth.permission", "pk": 3}, {"fields": {"codename": "add_permission", "name": "Can add permission", "content_type": 2}, "model": "auth.permission", "pk": 4}, {"fields": {"codename": "change_permission", "name": "Can change permission", "content_type": 2}, "model": "auth.permission", "pk": 5}, {"fields": {"codename": "delete_permission", "name": "Can delete permission", "content_type": 2}, "model": "auth.permission", "pk": 6}, {"fields": {"codename": "add_group", "name": "Can add group", "content_type": 3}, "model": "auth.permission", "pk": 7}, {"fields": {"codename": "change_group", "name": "Can change group", "content_type": 3}, "model": "auth.permission", "pk": 8}, {"fields": {"codename": "delete_group", "name": "Can delete group", "content_type": 3}, "model": "auth.permission", "pk": 9}, {"fields": {"codename": "add_user", "name": "Can add user", "content_type": 4}, "model": "auth.permission", "pk": 10}, {"fields": {"codename": "change_user", "name": "Can change user", "content_type": 4}, "model": "auth.permission", "pk": 11}, {"fields": {"codename": "delete_user", "name": "Can delete user", "content_type": 4}, "model": "auth.permission", "pk": 12}, {"fields": {"codename": "add_contenttype", "name": "Can add content type", "content_type": 5}, "model": "auth.permission", "pk": 13}, {"fields": {"codename": "change_contenttype", "name": "Can change content type", "content_type": 5}, "model": "auth.permission", "pk": 14}, {"fields": {"codename": "delete_contenttype", "name": "Can delete content type", "content_type": 5}, "model": "auth.permission", "pk": 15}, {"fields": {"codename": "add_session", "name": "Can add session", "content_type": 6}, "model": "auth.permission", "pk": 16}, {"fields": {"codename": "change_session", "name": "Can change session", "content_type": 6}, "model": "auth.permission", "pk": 17}, {"fields": {"codename": "delete_session", "name": "Can delete session", "content_type": 6}, "model": "auth.permission", "pk": 18}, {"fields": {"codename": "add_site", "name": "Can add site", "content_type": 7}, "model": "auth.permission", "pk": 19}, {"fields": {"codename": "change_site", "name": "Can change site", "content_type": 7}, "model": "auth.permission", "pk": 20}, {"fields": {"codename": "delete_site", "name": "Can delete site", "content_type": 7}, "model": "auth.permission", "pk": 21}, {"fields": {"codename": "add_registrationprofile", "name": "Can add registration profile", "content_type": 8}, "model": "auth.permission", "pk": 22}, {"fields": {"codename": "change_registrationprofile", "name": "Can change registration profile", "content_type": 8}, "model": "auth.permission", "pk": 23}, {"fields": {"codename": "delete_registrationprofile", "name": "Can delete registration profile", "content_type": 8}, "model": "auth.permission", "pk": 24}, {"fields": {"codename": "add_school", "name": "Can add school", "content_type": 9}, "model": "auth.permission", "pk": 25}, {"fields": {"codename": "change_school", "name": "Can change school", "content_type": 9}, "model": "auth.permission", "pk": 26}, {"fields": {"codename": "delete_school", "name": "Can delete school", "content_type": 9}, "model": "auth.permission", "pk": 27}, {"fields": {"codename": "add_topic", "name": "Can add topic", "content_type": 10}, "model": "auth.permission", "pk": 28}, {"fields": {"codename": "change_topic", "name": "Can change topic", "content_type": 10}, "model": "auth.permission", "pk": 29}, {"fields": {"codename": "delete_topic", "name": "Can delete topic", "content_type": 10}, "model": "auth.permission", "pk": 30}, {"fields": {"codename": "add_userprofile", "name": "Can add user profile", "content_type": 11}, "model": "auth.permission", "pk": 31}, {"fields": {"codename": "change_userprofile", "name": "Can change user profile", "content_type": 11}, "model": "auth.permission", "pk": 32}, {"fields": {"codename": "delete_userprofile", "name": "Can delete user profile", "content_type": 11}, "model": "auth.permission", "pk": 33}, {"fields": {"codename": "add_supervisor", "name": "Can add supervisor", "content_type": 12}, "model": "auth.permission", "pk": 34}, {"fields": {"codename": "change_supervisor", "name": "Can change supervisor", "content_type": 12}, "model": "auth.permission", "pk": 35}, {"fields": {"codename": "delete_supervisor", "name": "Can delete supervisor", "content_type": 12}, "model": "auth.permission", "pk": 36}, {"fields": {"codename": "add_project", "name": "Can add project", "content_type": 13}, "model": "auth.permission", "pk": 37}, {"fields": {"codename": "change_project", "name": "Can change project", "content_type": 13}, "model": "auth.permission", "pk": 38}, {"fields": {"codename": "delete_project", "name": "Can delete project", "content_type": 13}, "model": "auth.permission", "pk": 39}, {"fields": {"codename": "add_student", "name": "Can add student", "content_type": 14}, "model": "auth.permission", "pk": 40}, {"fields": {"codename": "change_student", "name": "Can change student", "content_type": 14}, "model": "auth.permission", "pk": 41}, {"fields": {"codename": "delete_student", "name": "Can delete student", "content_type": 14}, "model": "auth.permission", "pk": 42}, {"fields": {"codename": "add_application", "name": "Can add application", "content_type": 15}, "model": "auth.permission", "pk": 43}, {"fields": {"codename": "change_application", "name": "Can change application", "content_type": 15}, "model": "auth.permission", "pk": 44}, {"fields": {"codename": "delete_application", "name": "Can delete application", "content_type": 15}, "model": "auth.permission", "pk": 45}, {"fields": {"username": "lama", "first_name": "", "last_name": "", "is_active": true, "is_superuser": true, "is_staff": true, "last_login": "2015-03-21T12:45:09.196Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$Ul65ZkffFBEe$b8ZKspICWXCMdBGLhTUwVZdpZaUEJpEOj89FG4x4O9g=", "email": "lamalssum@gmail.com", "date_joined": "2015-03-17T21:57:25.361Z"}, "model": "auth.user", "pk": 1}, {"fields": {"username": "alssum", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2015-03-18T23:50:55.544Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$WyVSL20drQew$mcK29vTJ5vAh4bd6skRw9dVwzp3/ZO5PaHQS98bhsy0=", "email": "alssum@gmail.com", "date_joined": "2015-03-17T22:56:19.616Z"}, "model": "auth.user", "pk": 8}, {"fields": {"username": "kriscamilleri", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2015-03-20T10:52:06.461Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$15000$Cp5QBMdRLzU8$8IWZ9036nTErtqwcAxJ/q+aZ9Tym/ItaCYcCuaQqyPQ=", "email": "", "date_joined": "2015-03-20T10:52:06.461Z"}, "model": "auth.user", "pk": 10}, {"fields": {"username": "lamaassum", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2015-03-20T10:52:13.831Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$15000$0ij2Dgs3x2KT$eOCMRkzGUWXRWzABD4wMyS2DCskoAckjr3oOw7CxjH4=", "email": "", "date_joined": "2015-03-20T10:52:13.831Z"}, "model": "auth.user", "pk": 11}, {"fields": {"username": "carolstewart", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2015-03-20T10:52:21.755Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$15000$o1rUHCLjiEjp$aczB/GxKZCFNetxkd5hiThj5eCp9WcnDC8xCZohbsYo=", "email": "", "date_joined": "2015-03-20T10:52:21.755Z"}, "model": "auth.user", "pk": 12}, {"fields": {"username": "ziyhou", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2015-03-20T10:52:30.846Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$15000$IP9rsHK5FCp0$YAh/PXR36JAFHJrAQuZpj7sl4G5rOmjnb0apC8daljc=", "email": "", "date_joined": "2015-03-20T10:52:30.846Z"}, "model": "auth.user", "pk": 13}, {"fields": {"username": "stephenbrewster", "first_name": "Stephen", "last_name": "Brewster", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2015-03-21T12:46:14.883Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$vQU4GN7bLCgC$ibYHyE4l21iVCVBh11xLIwFhFvVIHi1Dr33zEyJ68rs=", "email": "stephen.brewster@glasgow.ac.uk", "date_joined": "2015-03-20T10:52:43Z"}, "model": "auth.user", "pk": 14}, {"fields": {"username": "juliewilliamson", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2015-03-20T10:52:53.123Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$15000$htg92J1zc3p4$xlIGygn6SkO4x9fuIjDMI+DTsu1FR0lkL6oE2gZ/OEU=", "email": "", "date_joined": "2015-03-20T10:52:53.123Z"}, "model": "auth.user", "pk": 15}, {"fields": {"username": "leifazzopardi", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2015-03-20T10:53:02.410Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$15000$NUV2CN52rHrk$CATVQKu8BmnpGaGC13PtzMDp+nIxhW7peFY1y+D9OX4=", "email": "", "date_joined": "2015-03-20T10:53:02.410Z"}, "model": "auth.user", "pk": 16}, {"fields": {"username": "jameslanzon", "first_name": "", "last_name": "", "is_active": true, "is_superuser": false, "is_staff": false, "last_login": "2015-03-20T11:05:41.838Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$15000$2KQl5P8zFArC$gRja/S57W3i+UCgNuTNOe7JWvMXnlIsOdOZNC/YKN/k=", "email": "", "date_joined": "2015-03-20T11:05:41.838Z"}, "model": "auth.user", "pk": 17}, {"fields": {"website": "", "picture": "profile_images/carol1299x3351.jpg", "topic_choices": [3, 10], "about_me": "", "user": 12, "school_ID": 1}, "model": "FMS.userprofile", "pk": 1}, {"fields": {"website": "", "picture": "profile_images/455379230-julie-williamson-from-generation-yes-a-youth-gettyimages1.jpg", "topic_choices": [1, 4], "about_me": "", "user": 15, "school_ID": 1}, "model": "FMS.userprofile", "pk": 2}, {"fields": {"website": "http://kriscamilleri.com/", "picture": "profile_images/19f750f1.jpg", "topic_choices": [1, 4, 9], "about_me": "", "user": 10, "school_ID": 1}, "model": "FMS.userprofile", "pk": 3}, {"fields": {"website": "", "picture": "", "topic_choices": [10, 11, 12], "about_me": "", "user": 11, "school_ID": 1}, "model": "FMS.userprofile", "pk": 4}, {"fields": {"website": "http://www.tangowithdjango.com/", "picture": "profile_images/leif-azzopardi1.jpg", "topic_choices": [2, 3, 5], "about_me": "", "user": 16, "school_ID": 1}, "model": "FMS.userprofile", "pk": 5}, {"fields": {"website": "http://www.dcs.gla.ac.uk/~stephen", "picture": "", "topic_choices": [1, 4], "about_me": "I am a Professor of Human-Computer Interaction in the Department of Computing Science at the University of Glasgow, UK. My main research interest is in Multimodal Human-Computer Interaction, sound and haptics and gestures. I have done a lot of research into Earcons, a particular form of non-speech sounds.\r\nI did my degree in Computer Science at the University of Herfordshire in the UK. After a period in industry I did my PhD in the Human-Computer Interaction Group at the University of York in th", "user": 14, "school_ID": 1}, "model": "FMS.userprofile", "pk": 6}, {"fields": {"website": "", "picture": "", "topic_choices": [11, 12], "about_me": "", "user": 13, "school_ID": 1}, "model": "FMS.userprofile", "pk": 7}, {"fields": {"website": "", "picture": "", "topic_choices": [2, 3], "about_me": "", "user": 17, "school_ID": 1}, "model": "FMS.userprofile", "pk": 8}, {"fields": {"activation_key": "ALREADY_ACTIVATED", "user": 8}, "model": "registration.registrationprofile", "pk": 7}, {"fields": {"action_flag": 2, "action_time": "2015-03-17T22:46:56.006Z", "object_repr": "127.0.0.1.com", "object_id": "1", "change_message": "Changed domain and name.", "user": 1, "content_type": 7}, "model": "admin.logentry", "pk": 1}, {"fields": {"action_flag": 3, "action_time": "2015-03-17T22:47:44.323Z", "object_repr": "alssum", "object_id": "3", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 2}, {"fields": {"action_flag": 3, "action_time": "2015-03-17T22:47:44.327Z", "object_repr": "lamal", "object_id": "4", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 3}, {"fields": {"action_flag": 3, "action_time": "2015-03-17T22:47:44.330Z", "object_repr": "lamalssum", "object_id": "2", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 4}, {"fields": {"action_flag": 2, "action_time": "2015-03-17T22:49:14.392Z", "object_repr": "127.0.0.1", "object_id": "1", "change_message": "Changed domain.", "user": 1, "content_type": 7}, "model": "admin.logentry", "pk": 5}, {"fields": {"action_flag": 3, "action_time": "2015-03-17T22:49:33.396Z", "object_repr": "alssum", "object_id": "5", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 6}, {"fields": {"action_flag": 3, "action_time": "2015-03-17T22:51:59.364Z", "object_repr": "alssum", "object_id": "6", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 7}, {"fields": {"action_flag": 2, "action_time": "2015-03-17T22:52:19.250Z", "object_repr": "http://127.0.0.1:8000/", "object_id": "1", "change_message": "Changed domain.", "user": 1, "content_type": 7}, "model": "admin.logentry", "pk": 8}, {"fields": {"action_flag": 2, "action_time": "2015-03-17T22:54:45.395Z", "object_repr": "127.0.0.1:8000", "object_id": "1", "change_message": "Changed domain.", "user": 1, "content_type": 7}, "model": "admin.logentry", "pk": 9}, {"fields": {"action_flag": 3, "action_time": "2015-03-17T22:54:55.873Z", "object_repr": "alssum", "object_id": "7", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 10}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:47:32.782Z", "object_repr": "Human Computer Interaction", "object_id": "1", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 11}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:47:43.531Z", "object_repr": "Internet Technologies", "object_id": "2", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 12}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:47:46.684Z", "object_repr": "Django", "object_id": "3", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 13}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:47:57.340Z", "object_repr": "Augmented Reality", "object_id": "4", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 14}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:48:04.649Z", "object_repr": "Information Retrieval", "object_id": "5", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 15}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:48:18.337Z", "object_repr": "Databases", "object_id": "6", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 16}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:48:26.766Z", "object_repr": "Neural Networks", "object_id": "7", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 17}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:49:00.017Z", "object_repr": "Graph Theory", "object_id": "8", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 18}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:50:01.946Z", "object_repr": "Virtual Reality", "object_id": "9", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 19}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:50:11.583Z", "object_repr": "Fuzzy Logic", "object_id": "10", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 20}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:50:26.919Z", "object_repr": "Compilers", "object_id": "11", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 21}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:50:31.239Z", "object_repr": "Emulation", "object_id": "12", "change_message": "", "user": 1, "content_type": 10}, "model": "admin.logentry", "pk": 22}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:51:02.108Z", "object_repr": "School of Computing", "object_id": "1", "change_message": "", "user": 1, "content_type": 9}, "model": "admin.logentry", "pk": 23}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:51:06.512Z", "object_repr": "School of Chemistry", "object_id": "2", "change_message": "", "user": 1, "content_type": 9}, "model": "admin.logentry", "pk": 24}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:51:59.527Z", "object_repr": "jameslanzon", "object_id": "9", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 25}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:52:06.600Z", "object_repr": "kriscamilleri", "object_id": "10", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 26}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:52:14.064Z", "object_repr": "lamaassum", "object_id": "11", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 27}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:52:21.937Z", "object_repr": "carolstewart", "object_id": "12", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 28}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:52:31.012Z", "object_repr": "ziyhou", "object_id": "13", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 29}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:52:44.402Z", "object_repr": "stephenbrewster", "object_id": "14", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 30}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:52:53.278Z", "object_repr": "juliewilliamson", "object_id": "15", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 31}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:53:02.568Z", "object_repr": "leifazzopardi", "object_id": "16", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 32}, {"fields": {"action_flag": 3, "action_time": "2015-03-20T10:53:59.384Z", "object_repr": "alssum", "object_id": "8", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 33}, {"fields": {"action_flag": 3, "action_time": "2015-03-20T10:54:15.289Z", "object_repr": "jameslanzon", "object_id": "9", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 34}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:55:50.596Z", "object_repr": "carolstewart", "object_id": "1", "change_message": "", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 35}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:56:38.963Z", "object_repr": "juliewilliamson", "object_id": "2", "change_message": "", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 36}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:57:18.695Z", "object_repr": "kriscamilleri", "object_id": "3", "change_message": "", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 37}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:57:41.370Z", "object_repr": "lamaassum", "object_id": "4", "change_message": "", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 38}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:58:33.746Z", "object_repr": "leifazzopardi", "object_id": "5", "change_message": "", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 39}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:59:28.896Z", "object_repr": "stephenbrewster", "object_id": "6", "change_message": "", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 40}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T10:59:56.466Z", "object_repr": "ziyhou", "object_id": "7", "change_message": "", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 41}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:05:42.532Z", "object_repr": "jameslanzon", "object_id": "17", "change_message": "", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 42}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:06:18.416Z", "object_repr": "jameslanzon", "object_id": "8", "change_message": "", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 43}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:18:28.723Z", "object_repr": "jameslanzon", "object_id": "1", "change_message": "", "user": 1, "content_type": 12}, "model": "admin.logentry", "pk": 44}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:22:38.924Z", "object_repr": "kriscamilleri", "object_id": "1", "change_message": "", "user": 1, "content_type": 14}, "model": "admin.logentry", "pk": 45}, {"fields": {"action_flag": 3, "action_time": "2015-03-20T11:22:54.790Z", "object_repr": "kriscamilleri", "object_id": "1", "change_message": "", "user": 1, "content_type": 14}, "model": "admin.logentry", "pk": 46}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:23:14.420Z", "object_repr": "kriscamilleri", "object_id": "2", "change_message": "", "user": 1, "content_type": 14}, "model": "admin.logentry", "pk": 47}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:24:31.876Z", "object_repr": "lamaassum", "object_id": "3", "change_message": "", "user": 1, "content_type": 14}, "model": "admin.logentry", "pk": 48}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:24:45.358Z", "object_repr": "ziyhou", "object_id": "4", "change_message": "", "user": 1, "content_type": 14}, "model": "admin.logentry", "pk": 49}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:25:03.097Z", "object_repr": "carolstewart", "object_id": "5", "change_message": "", "user": 1, "content_type": 14}, "model": "admin.logentry", "pk": 50}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:25:47.728Z", "object_repr": "juliewilliamson", "object_id": "2", "change_message": "", "user": 1, "content_type": 12}, "model": "admin.logentry", "pk": 51}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:25:54.518Z", "object_repr": "leifazzopardi", "object_id": "3", "change_message": "", "user": 1, "content_type": 12}, "model": "admin.logentry", "pk": 52}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:26:06.632Z", "object_repr": "stephenbrewster", "object_id": "4", "change_message": "", "user": 1, "content_type": 12}, "model": "admin.logentry", "pk": 53}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:27:23.785Z", "object_repr": "Scottish Visualization Appplication", "object_id": "1", "change_message": "", "user": 1, "content_type": 13}, "model": "admin.logentry", "pk": 54}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:28:45.261Z", "object_repr": "Task Irrelevant Information in Augmented Reality", "object_id": "2", "change_message": "", "user": 1, "content_type": 13}, "model": "admin.logentry", "pk": 55}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:30:35.255Z", "object_repr": "Task Irrelevant Information in Augmented Reality kriscamilleri", "object_id": "1", "change_message": "", "user": 1, "content_type": 15}, "model": "admin.logentry", "pk": 56}, {"fields": {"action_flag": 3, "action_time": "2015-03-20T11:31:22.616Z", "object_repr": "Task Irrelevant Information in Augmented Reality kriscamilleri", "object_id": "1", "change_message": "", "user": 1, "content_type": 15}, "model": "admin.logentry", "pk": 57}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:31:30.794Z", "object_repr": "Task Irrelevant Information in Augmented Reality kriscamilleri", "object_id": "2", "change_message": "", "user": 1, "content_type": 15}, "model": "admin.logentry", "pk": 58}, {"fields": {"action_flag": 1, "action_time": "2015-03-20T11:31:39.380Z", "object_repr": "Scottish Visualization Appplication lamaassum", "object_id": "3", "change_message": "", "user": 1, "content_type": 15}, "model": "admin.logentry", "pk": 59}, {"fields": {"action_flag": 2, "action_time": "2015-03-21T01:28:25.501Z", "object_repr": "stephenbrewster", "object_id": "6", "change_message": "Changed about_me and website.", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 60}, {"fields": {"action_flag": 2, "action_time": "2015-03-21T01:30:15.046Z", "object_repr": "stephenbrewster", "object_id": "14", "change_message": "Changed first_name, last_name and email.", "user": 1, "content_type": 4}, "model": "admin.logentry", "pk": 61}, {"fields": {"action_flag": 2, "action_time": "2015-03-21T01:39:05.288Z", "object_repr": "stephenbrewster", "object_id": "6", "change_message": "No fields changed.", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 62}, {"fields": {"action_flag": 2, "action_time": "2015-03-21T01:40:45.382Z", "object_repr": "stephenbrewster", "object_id": "6", "change_message": "Changed topic_choices.", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 63}, {"fields": {"action_flag": 2, "action_time": "2015-03-21T11:42:07.681Z", "object_repr": "stephenbrewster", "object_id": "6", "change_message": "No fields changed.", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 64}, {"fields": {"action_flag": 2, "action_time": "2015-03-21T12:26:16.787Z", "object_repr": "stephenbrewster", "object_id": "6", "change_message": "Changed picture.", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 65}, {"fields": {"action_flag": 2, "action_time": "2015-03-21T12:35:40.586Z", "object_repr": "stephenbrewster", "object_id": "6", "change_message": "No fields changed.", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 66}, {"fields": {"action_flag": 2, "action_time": "2015-03-21T12:45:27.490Z", "object_repr": "stephenbrewster", "object_id": "6", "change_message": "Changed picture.", "user": 1, "content_type": 11}, "model": "admin.logentry", "pk": 67}]
+[
+{
+    "fields": {
+        "model": "logentry",
+        "name": "log entry",
+        "app_label": "admin"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 1
+},
+{
+    "fields": {
+        "model": "permission",
+        "name": "permission",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 2
+},
+{
+    "fields": {
+        "model": "group",
+        "name": "group",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 3
+},
+{
+    "fields": {
+        "model": "user",
+        "name": "user",
+        "app_label": "auth"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 4
+},
+{
+    "fields": {
+        "model": "contenttype",
+        "name": "content type",
+        "app_label": "contenttypes"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 5
+},
+{
+    "fields": {
+        "model": "session",
+        "name": "session",
+        "app_label": "sessions"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 6
+},
+{
+    "fields": {
+        "model": "site",
+        "name": "site",
+        "app_label": "sites"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 7
+},
+{
+    "fields": {
+        "model": "registrationprofile",
+        "name": "registration profile",
+        "app_label": "registration"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 8
+},
+{
+    "fields": {
+        "model": "school",
+        "name": "school",
+        "app_label": "FMS"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 9
+},
+{
+    "fields": {
+        "model": "topic",
+        "name": "topic",
+        "app_label": "FMS"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 10
+},
+{
+    "fields": {
+        "model": "userprofile",
+        "name": "user profile",
+        "app_label": "FMS"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 11
+},
+{
+    "fields": {
+        "model": "supervisor",
+        "name": "supervisor",
+        "app_label": "FMS"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 12
+},
+{
+    "fields": {
+        "model": "project",
+        "name": "project",
+        "app_label": "FMS"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 13
+},
+{
+    "fields": {
+        "model": "student",
+        "name": "student",
+        "app_label": "FMS"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 14
+},
+{
+    "fields": {
+        "model": "application",
+        "name": "application",
+        "app_label": "FMS"
+    },
+    "model": "contenttypes.contenttype",
+    "pk": 15
+},
+{
+    "fields": {
+        "expire_date": "2015-04-05T19:07:31.320Z",
+        "session_data": "YjU2ODdjMTg0NWRhNDA3ZTAzNjA1MTJmOTg1NGY3NzhkZmY4YzZmMDp7Il9hdXRoX3VzZXJfaGFzaCI6IjU3NjA5M2E0MWQ2YzllNmQ0MzM3NTU1Y2E0YjY4ZjRjYWM5MDRjY2QiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"
+    },
+    "model": "sessions.session",
+    "pk": "2gqla9866fkg7p0g4mx32liq3agg0vh5"
+},
+{
+    "fields": {
+        "expire_date": "2015-04-04T11:51:20.124Z",
+        "session_data": "MDdhNTIwM2YyZmY4YmFlNjU1YzcwYjIxODUyMzQ1Yzg0OGNjYmNkODp7Il9hdXRoX3VzZXJfaGFzaCI6IjlhMDA4OWNlMGMzZDE5Mjc3MjY4ZTc4OTViZTk1MmU4M2FjNmUzMjQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"
+    },
+    "model": "sessions.session",
+    "pk": "2zzbssj4bi6uaqlr6ih5lrhobqm782el"
+},
+{
+    "fields": {
+        "expire_date": "2015-04-03T11:19:54.571Z",
+        "session_data": "MGI5MzBkZmNkOGJkZDc2MDQ0OTY2ODQ3ZGIxZmZhZDhjNzk1NzNiNjp7Il9hdXRoX3VzZXJfaGFzaCI6Ijk1OWYzYTY0YWU3NTVkM2U0MjQ5NmQxMDhhMjk4ZTI3NWRhZWEzMDIiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"
+    },
+    "model": "sessions.session",
+    "pk": "c2vwxh7y47jzuhdkf39ap9rmirgy3p2l"
+},
+{
+    "fields": {
+        "expire_date": "2015-04-04T13:12:11.787Z",
+        "session_data": "N2I0ZDkwZmY3ODYxZjNkOWUyMDc3Y2FmZTU3OWM2ODEwNDg2MmViYTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE1YTA0MzRhYWQ4NTlkMzgzMjFjZDYyN2QwZDk0Yzk1MDVkOTA0MGEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjE0fQ=="
+    },
+    "model": "sessions.session",
+    "pk": "cfemcts0hnrdxltpqlnqarvkecrhyi5a"
+},
+{
+    "fields": {
+        "expire_date": "2015-04-04T12:46:14.885Z",
+        "session_data": "N2I0ZDkwZmY3ODYxZjNkOWUyMDc3Y2FmZTU3OWM2ODEwNDg2MmViYTp7Il9hdXRoX3VzZXJfaGFzaCI6IjE1YTA0MzRhYWQ4NTlkMzgzMjFjZDYyN2QwZDk0Yzk1MDVkOTA0MGEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjE0fQ=="
+    },
+    "model": "sessions.session",
+    "pk": "jtxf9yef1jttlq93qdm1kjzeih3d09fp"
+},
+{
+    "fields": {
+        "expire_date": "2015-03-01T20:36:38.291Z",
+        "session_data": "ODdkNmY3MjY4MTE4NjEwNDQwMzgyYzAzOWQwYzE5N2M3ZWZjZTk4YTp7fQ=="
+    },
+    "model": "sessions.session",
+    "pk": "kzgtzfg6dd8mxj8fr5jo1pecizr45r19"
+},
+{
+    "fields": {
+        "expire_date": "2015-04-05T15:51:17.724Z",
+        "session_data": "NmYwNDBmYTMyZTA5MGQwYTBiYmJmYTgyYzViZWE4M2U0YmJiZWE2NDp7Il9hdXRoX3VzZXJfaGFzaCI6IjRmNGI1NjMzZGVjZTUyZDc2NDA1MmNlNzQ3ZTFkNjNmZWY4YjY5YWEiLCJfYXV0aF91c2VyX2lkIjoxMCwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQifQ=="
+    },
+    "model": "sessions.session",
+    "pk": "nxyrygsp9x9pdyvmzpmaxkscvrrdy6b2"
+},
+{
+    "fields": {
+        "expire_date": "2015-04-04T15:21:25.490Z",
+        "session_data": "MzAwNTgyNmYxMzNiNzc0YWMzMWIyYWVkNDFjMjUwNjdjMWI3YzAzNTp7Il9hdXRoX3VzZXJfaGFzaCI6IjgzYWFkNTI3YjMxYjQxOWI3OGRmZWMzOTM0YjIzZDViYmI4MzRiMWIiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjE0fQ=="
+    },
+    "model": "sessions.session",
+    "pk": "o3iydi9ijb5mvnhz5qvqmm4q4ykdrkgs"
+},
+{
+    "fields": {
+        "expire_date": "2015-04-04T12:44:22.650Z",
+        "session_data": "OGE3NDQxZDE2MDQzNTdhMzk1NzQ3NWIwOWE4ZjVkNzVjZDUxZmY3ZDp7Il9hdXRoX3VzZXJfaGFzaCI6IjcyODJmNWFhMmRiY2YzN2U4MWQ3Y2EwOWRmYWQ0ZjM5MzFkMjMwZjMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjE0fQ=="
+    },
+    "model": "sessions.session",
+    "pk": "pch63aqt7y8cx05qnawo5zz1teel8uoi"
+},
+{
+    "fields": {
+        "expire_date": "2015-04-03T15:08:03.410Z",
+        "session_data": "Mzk3M2E5YTQ1YWViYThjMjEyNDdhYWEyZmVmN2M3ZTQxNjcyYmViNTp7Il9hdXRoX3VzZXJfaGFzaCI6IjgwM2Q2NzFkZTk5ZWZkYzY3YzY3ZWU5Y2JlNDgxNDcyY2NkZTE3YTEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"
+    },
+    "model": "sessions.session",
+    "pk": "pi421vn2ysxajyferk0rvhg35yvx9ygg"
+},
+{
+    "fields": {
+        "expire_date": "2015-04-03T10:44:25.337Z",
+        "session_data": "ZmViNzU1YzU4ODA1ZTk0ZDExODg3Y2Q0NWU1MjkxNDc2NjczZDNlYTp7Il9hdXRoX3VzZXJfaGFzaCI6ImVmOTAzYTA2NjBkYjI3ZTgxMjYyMDhmMmQ4YjJkYmI1MjA5N2QxMWMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"
+    },
+    "model": "sessions.session",
+    "pk": "v08p8na2a2d4e6xceenaa051sztcdje4"
+},
+{
+    "fields": {
+        "expire_date": "2015-04-05T17:11:49.379Z",
+        "session_data": "YjU2ODdjMTg0NWRhNDA3ZTAzNjA1MTJmOTg1NGY3NzhkZmY4YzZmMDp7Il9hdXRoX3VzZXJfaGFzaCI6IjU3NjA5M2E0MWQ2YzllNmQ0MzM3NTU1Y2E0YjY4ZjRjYWM5MDRjY2QiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"
+    },
+    "model": "sessions.session",
+    "pk": "z4nolw8rs5mjmu0vtfii59sdrgrba0tb"
+},
+{
+    "fields": {
+        "domain": "127.0.0.1:8000",
+        "name": "localhost.com"
+    },
+    "model": "sites.site",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Computing School"
+    },
+    "model": "FMS.school",
+    "pk": 5
+},
+{
+    "fields": {
+        "name": "HCI"
+    },
+    "model": "FMS.topic",
+    "pk": 16
+},
+{
+    "fields": {
+        "name": "Internet Technologies"
+    },
+    "model": "FMS.topic",
+    "pk": 17
+},
+{
+    "fields": {
+        "name": "Virtual Reality"
+    },
+    "model": "FMS.topic",
+    "pk": 18
+},
+{
+    "fields": {
+        "job_title": "Senior Lecturer",
+        "availability": true,
+        "user_profile": 8
+    },
+    "model": "FMS.supervisor",
+    "pk": 5
+},
+{
+    "fields": {
+        "job_title": "Senior HCI Lecturer",
+        "availability": true,
+        "user_profile": 6
+    },
+    "model": "FMS.supervisor",
+    "pk": 6
+},
+{
+    "fields": {
+        "job_title": "Resident Professor",
+        "availability": true,
+        "user_profile": 4
+    },
+    "model": "FMS.supervisor",
+    "pk": 7
+},
+{
+    "fields": {
+        "supervisor": 5,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "level": "Masters",
+        "title": "Super Mega Ultra Project",
+        "projectAssigned": false,
+        "slug": "super-mega-ultra-project-none",
+        "project_topic": [
+            16,
+            17,
+            18
+        ]
+    },
+    "model": "FMS.project",
+    "pk": 1
+},
+{
+    "fields": {
+        "major": "IT",
+        "degree": "Bachelors",
+        "user_profile": 5,
+        "supervisor_choices": [],
+        "project_choices": [],
+        "advisor": "James Lanzon",
+        "advisor_email": "jameslanzon@gmail.com"
+    },
+    "model": "FMS.student",
+    "pk": 6
+},
+{
+    "fields": {
+        "major": "Computing Science",
+        "degree": "Masters",
+        "user_profile": 7,
+        "supervisor_choices": [],
+        "project_choices": [],
+        "advisor": "",
+        "advisor_email": ""
+    },
+    "model": "FMS.student",
+    "pk": 7
+},
+{
+    "fields": {
+        "major": "Computing Science",
+        "degree": "Masters",
+        "user_profile": 9,
+        "supervisor_choices": [],
+        "project_choices": [],
+        "advisor": "",
+        "advisor_email": ""
+    },
+    "model": "FMS.student",
+    "pk": 8
+},
+{
+    "fields": {
+        "codename": "add_logentry",
+        "name": "Can add log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 1
+},
+{
+    "fields": {
+        "codename": "change_logentry",
+        "name": "Can change log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 2
+},
+{
+    "fields": {
+        "codename": "delete_logentry",
+        "name": "Can delete log entry",
+        "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 3
+},
+{
+    "fields": {
+        "codename": "add_permission",
+        "name": "Can add permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 4
+},
+{
+    "fields": {
+        "codename": "change_permission",
+        "name": "Can change permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 5
+},
+{
+    "fields": {
+        "codename": "delete_permission",
+        "name": "Can delete permission",
+        "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 6
+},
+{
+    "fields": {
+        "codename": "add_group",
+        "name": "Can add group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 7
+},
+{
+    "fields": {
+        "codename": "change_group",
+        "name": "Can change group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 8
+},
+{
+    "fields": {
+        "codename": "delete_group",
+        "name": "Can delete group",
+        "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 9
+},
+{
+    "fields": {
+        "codename": "add_user",
+        "name": "Can add user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 10
+},
+{
+    "fields": {
+        "codename": "change_user",
+        "name": "Can change user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 11
+},
+{
+    "fields": {
+        "codename": "delete_user",
+        "name": "Can delete user",
+        "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 12
+},
+{
+    "fields": {
+        "codename": "add_contenttype",
+        "name": "Can add content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 13
+},
+{
+    "fields": {
+        "codename": "change_contenttype",
+        "name": "Can change content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 14
+},
+{
+    "fields": {
+        "codename": "delete_contenttype",
+        "name": "Can delete content type",
+        "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 15
+},
+{
+    "fields": {
+        "codename": "add_session",
+        "name": "Can add session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 16
+},
+{
+    "fields": {
+        "codename": "change_session",
+        "name": "Can change session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 17
+},
+{
+    "fields": {
+        "codename": "delete_session",
+        "name": "Can delete session",
+        "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 18
+},
+{
+    "fields": {
+        "codename": "add_site",
+        "name": "Can add site",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 19
+},
+{
+    "fields": {
+        "codename": "change_site",
+        "name": "Can change site",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 20
+},
+{
+    "fields": {
+        "codename": "delete_site",
+        "name": "Can delete site",
+        "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 21
+},
+{
+    "fields": {
+        "codename": "add_registrationprofile",
+        "name": "Can add registration profile",
+        "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 22
+},
+{
+    "fields": {
+        "codename": "change_registrationprofile",
+        "name": "Can change registration profile",
+        "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 23
+},
+{
+    "fields": {
+        "codename": "delete_registrationprofile",
+        "name": "Can delete registration profile",
+        "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 24
+},
+{
+    "fields": {
+        "codename": "add_school",
+        "name": "Can add school",
+        "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 25
+},
+{
+    "fields": {
+        "codename": "change_school",
+        "name": "Can change school",
+        "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 26
+},
+{
+    "fields": {
+        "codename": "delete_school",
+        "name": "Can delete school",
+        "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 27
+},
+{
+    "fields": {
+        "codename": "add_topic",
+        "name": "Can add topic",
+        "content_type": 10
+    },
+    "model": "auth.permission",
+    "pk": 28
+},
+{
+    "fields": {
+        "codename": "change_topic",
+        "name": "Can change topic",
+        "content_type": 10
+    },
+    "model": "auth.permission",
+    "pk": 29
+},
+{
+    "fields": {
+        "codename": "delete_topic",
+        "name": "Can delete topic",
+        "content_type": 10
+    },
+    "model": "auth.permission",
+    "pk": 30
+},
+{
+    "fields": {
+        "codename": "add_userprofile",
+        "name": "Can add user profile",
+        "content_type": 11
+    },
+    "model": "auth.permission",
+    "pk": 31
+},
+{
+    "fields": {
+        "codename": "change_userprofile",
+        "name": "Can change user profile",
+        "content_type": 11
+    },
+    "model": "auth.permission",
+    "pk": 32
+},
+{
+    "fields": {
+        "codename": "delete_userprofile",
+        "name": "Can delete user profile",
+        "content_type": 11
+    },
+    "model": "auth.permission",
+    "pk": 33
+},
+{
+    "fields": {
+        "codename": "add_supervisor",
+        "name": "Can add supervisor",
+        "content_type": 12
+    },
+    "model": "auth.permission",
+    "pk": 34
+},
+{
+    "fields": {
+        "codename": "change_supervisor",
+        "name": "Can change supervisor",
+        "content_type": 12
+    },
+    "model": "auth.permission",
+    "pk": 35
+},
+{
+    "fields": {
+        "codename": "delete_supervisor",
+        "name": "Can delete supervisor",
+        "content_type": 12
+    },
+    "model": "auth.permission",
+    "pk": 36
+},
+{
+    "fields": {
+        "codename": "add_project",
+        "name": "Can add project",
+        "content_type": 13
+    },
+    "model": "auth.permission",
+    "pk": 37
+},
+{
+    "fields": {
+        "codename": "change_project",
+        "name": "Can change project",
+        "content_type": 13
+    },
+    "model": "auth.permission",
+    "pk": 38
+},
+{
+    "fields": {
+        "codename": "delete_project",
+        "name": "Can delete project",
+        "content_type": 13
+    },
+    "model": "auth.permission",
+    "pk": 39
+},
+{
+    "fields": {
+        "codename": "add_student",
+        "name": "Can add student",
+        "content_type": 14
+    },
+    "model": "auth.permission",
+    "pk": 40
+},
+{
+    "fields": {
+        "codename": "change_student",
+        "name": "Can change student",
+        "content_type": 14
+    },
+    "model": "auth.permission",
+    "pk": 41
+},
+{
+    "fields": {
+        "codename": "delete_student",
+        "name": "Can delete student",
+        "content_type": 14
+    },
+    "model": "auth.permission",
+    "pk": 42
+},
+{
+    "fields": {
+        "codename": "add_application",
+        "name": "Can add application",
+        "content_type": 15
+    },
+    "model": "auth.permission",
+    "pk": 43
+},
+{
+    "fields": {
+        "codename": "change_application",
+        "name": "Can change application",
+        "content_type": 15
+    },
+    "model": "auth.permission",
+    "pk": 44
+},
+{
+    "fields": {
+        "codename": "delete_application",
+        "name": "Can delete application",
+        "content_type": 15
+    },
+    "model": "auth.permission",
+    "pk": 45
+},
+{
+    "fields": {
+        "username": "lama",
+        "first_name": "Lama",
+        "last_name": "Assum",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2015-03-22T19:07:31Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$gNJ64bWBTbYT$Y3aHJpEWWigyK+Hxa1URvqF63TxwBNAXDunNhkz8G/M=",
+        "email": "lamalssum@student.com",
+        "date_joined": "2015-03-17T21:57:25Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+},
+{
+    "fields": {
+        "username": "stephenbrewster",
+        "first_name": "Stephen",
+        "last_name": "Brewster",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2015-03-22T17:59:46Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$fRwZs6HvpkGH$NvIJ7Ja5a6+WDaSpdLQysypM3YiIxapaBn/l0jgECNQ=",
+        "email": "stephen.brewster@glasgow.ac.uk",
+        "date_joined": "2015-03-22T17:59:46Z"
+    },
+    "model": "auth.user",
+    "pk": 21
+},
+{
+    "fields": {
+        "username": "kriscamilleri",
+        "first_name": "Kris",
+        "last_name": "Camilleri",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": true,
+        "last_login": "2015-03-22T19:08:00Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$uAm7j6ETxRN8$9CoD3Rzh6hD26ddcuH5su3FWReahPTQuZQ+UarVagaM=",
+        "email": "kris.cheesus@student.com",
+        "date_joined": "2015-03-22T19:08:00Z"
+    },
+    "model": "auth.user",
+    "pk": 22
+},
+{
+    "fields": {
+        "username": "juliewilliamson",
+        "first_name": "Julie",
+        "last_name": "Williamson",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2015-03-22T19:08:23Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$HrLp9IVzSkpw$j7hhX8QpdElM5Evm0UgY9S/DIGOg2MnrzcGkJa6w7/g=",
+        "email": "julie@glasgow.ac.uk",
+        "date_joined": "2015-03-22T19:08:23Z"
+    },
+    "model": "auth.user",
+    "pk": 23
+},
+{
+    "fields": {
+        "username": "leifazzopardi",
+        "first_name": "Leif",
+        "last_name": "Azzopardi",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2015-03-22T19:09:00Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$VTmcg09J3Erc$i9Cy3A/yp50YYJtyLIzHb876EC7LNQHQ8dHntwmAd+Q=",
+        "email": "leif@glasgow.ac.uk",
+        "date_joined": "2015-03-22T19:09:00Z"
+    },
+    "model": "auth.user",
+    "pk": 24
+},
+{
+    "fields": {
+        "username": "carolstewart",
+        "first_name": "Carol",
+        "last_name": "Stewart",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": false,
+        "last_login": "2015-03-22T19:09:55Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$3M81EspgXLrT$rH6Zu3iZH1+P3vmo/JS+zsuwwd+IHYw7aHu6C+Ns8Ro=",
+        "email": "carol@student.gla.ac.uk",
+        "date_joined": "2015-03-22T19:09:55Z"
+    },
+    "model": "auth.user",
+    "pk": 25
+},
+{
+    "fields": {
+        "website": "",
+        "picture": "",
+        "topic_choices": [
+            16
+        ],
+        "school_ID": 5,
+        "about_me": "fgaerfgbkejrhf",
+        "user": 21,
+        "slug": ""
+    },
+    "model": "FMS.userprofile",
+    "pk": 4
+},
+{
+    "fields": {
+        "website": "",
+        "picture": "",
+        "topic_choices": [
+            17
+        ],
+        "school_ID": 5,
+        "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "user": 25,
+        "slug": "carol-stewart-25"
+    },
+    "model": "FMS.userprofile",
+    "pk": 5
+},
+{
+    "fields": {
+        "website": "http://julie.com/",
+        "picture": "",
+        "topic_choices": [
+            16
+        ],
+        "school_ID": 5,
+        "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "user": 23,
+        "slug": "julie-williamson-23"
+    },
+    "model": "FMS.userprofile",
+    "pk": 6
+},
+{
+    "fields": {
+        "website": "",
+        "picture": "",
+        "topic_choices": [
+            16,
+            17,
+            18
+        ],
+        "school_ID": 5,
+        "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+        "user": 22,
+        "slug": "kris-camilleri-22"
+    },
+    "model": "FMS.userprofile",
+    "pk": 7
+},
+{
+    "fields": {
+        "website": "http://www.asdaac.com/",
+        "picture": "",
+        "topic_choices": [
+            16,
+            17
+        ],
+        "school_ID": 5,
+        "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "user": 24,
+        "slug": "leif-azzopardi-24"
+    },
+    "model": "FMS.userprofile",
+    "pk": 8
+},
+{
+    "fields": {
+        "website": "http://lama.com/",
+        "picture": "",
+        "topic_choices": [
+            17,
+            18
+        ],
+        "school_ID": 5,
+        "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "user": 1,
+        "slug": "lama-assum-1"
+    },
+    "model": "FMS.userprofile",
+    "pk": 9
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-17T22:46:56.006Z",
+        "object_repr": "127.0.0.1.com",
+        "object_id": "1",
+        "change_message": "Changed domain and name.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 1
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-17T22:47:44.323Z",
+        "object_repr": "alssum",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 2
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-17T22:47:44.327Z",
+        "object_repr": "lamal",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 3
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-17T22:47:44.330Z",
+        "object_repr": "lamalssum",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 4
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-17T22:49:14.392Z",
+        "object_repr": "127.0.0.1",
+        "object_id": "1",
+        "change_message": "Changed domain.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 5
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-17T22:49:33.396Z",
+        "object_repr": "alssum",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 6
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-17T22:51:59.364Z",
+        "object_repr": "alssum",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 7
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-17T22:52:19.250Z",
+        "object_repr": "http://127.0.0.1:8000/",
+        "object_id": "1",
+        "change_message": "Changed domain.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 8
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-17T22:54:45.395Z",
+        "object_repr": "127.0.0.1:8000",
+        "object_id": "1",
+        "change_message": "Changed domain.",
+        "user": 1,
+        "content_type": 7
+    },
+    "model": "admin.logentry",
+    "pk": 9
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-17T22:54:55.873Z",
+        "object_repr": "alssum",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 10
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:47:32.782Z",
+        "object_repr": "Human Computer Interaction",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 11
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:47:43.531Z",
+        "object_repr": "Internet Technologies",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 12
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:47:46.684Z",
+        "object_repr": "Django",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 13
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:47:57.340Z",
+        "object_repr": "Augmented Reality",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 14
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:48:04.649Z",
+        "object_repr": "Information Retrieval",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 15
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:48:18.337Z",
+        "object_repr": "Databases",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 16
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:48:26.766Z",
+        "object_repr": "Neural Networks",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 17
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:49:00.017Z",
+        "object_repr": "Graph Theory",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 18
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:50:01.946Z",
+        "object_repr": "Virtual Reality",
+        "object_id": "9",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 19
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:50:11.583Z",
+        "object_repr": "Fuzzy Logic",
+        "object_id": "10",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 20
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:50:26.919Z",
+        "object_repr": "Compilers",
+        "object_id": "11",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 21
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:50:31.239Z",
+        "object_repr": "Emulation",
+        "object_id": "12",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 22
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:51:02.108Z",
+        "object_repr": "School of Computing",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 23
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:51:06.512Z",
+        "object_repr": "School of Chemistry",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 24
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:51:59.527Z",
+        "object_repr": "jameslanzon",
+        "object_id": "9",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 25
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:52:06.600Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "10",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 26
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:52:14.064Z",
+        "object_repr": "lamaassum",
+        "object_id": "11",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 27
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:52:21.937Z",
+        "object_repr": "carolstewart",
+        "object_id": "12",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 28
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:52:31.012Z",
+        "object_repr": "ziyhou",
+        "object_id": "13",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 29
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:52:44.402Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "14",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 30
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:52:53.278Z",
+        "object_repr": "juliewilliamson",
+        "object_id": "15",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 31
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:53:02.568Z",
+        "object_repr": "leifazzopardi",
+        "object_id": "16",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 32
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-20T10:53:59.384Z",
+        "object_repr": "alssum",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 33
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-20T10:54:15.289Z",
+        "object_repr": "jameslanzon",
+        "object_id": "9",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 34
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:55:50.596Z",
+        "object_repr": "carolstewart",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 35
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:56:38.963Z",
+        "object_repr": "juliewilliamson",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 36
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:57:18.695Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 37
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:57:41.370Z",
+        "object_repr": "lamaassum",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 38
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:58:33.746Z",
+        "object_repr": "leifazzopardi",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 39
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:59:28.896Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 40
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T10:59:56.466Z",
+        "object_repr": "ziyhou",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 41
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:05:42.532Z",
+        "object_repr": "jameslanzon",
+        "object_id": "17",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 42
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:06:18.416Z",
+        "object_repr": "jameslanzon",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 43
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:18:28.723Z",
+        "object_repr": "jameslanzon",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 12
+    },
+    "model": "admin.logentry",
+    "pk": 44
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:22:38.924Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 45
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-20T11:22:54.790Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 46
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:23:14.420Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 47
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:24:31.876Z",
+        "object_repr": "lamaassum",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 48
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:24:45.358Z",
+        "object_repr": "ziyhou",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 49
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:25:03.097Z",
+        "object_repr": "carolstewart",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 50
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:25:47.728Z",
+        "object_repr": "juliewilliamson",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 12
+    },
+    "model": "admin.logentry",
+    "pk": 51
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:25:54.518Z",
+        "object_repr": "leifazzopardi",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 12
+    },
+    "model": "admin.logentry",
+    "pk": 52
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:26:06.632Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 12
+    },
+    "model": "admin.logentry",
+    "pk": 53
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:27:23.785Z",
+        "object_repr": "Scottish Visualization Appplication",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 54
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:28:45.261Z",
+        "object_repr": "Task Irrelevant Information in Augmented Reality",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 55
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:30:35.255Z",
+        "object_repr": "Task Irrelevant Information in Augmented Reality kriscamilleri",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 15
+    },
+    "model": "admin.logentry",
+    "pk": 56
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-20T11:31:22.616Z",
+        "object_repr": "Task Irrelevant Information in Augmented Reality kriscamilleri",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 15
+    },
+    "model": "admin.logentry",
+    "pk": 57
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:31:30.794Z",
+        "object_repr": "Task Irrelevant Information in Augmented Reality kriscamilleri",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 15
+    },
+    "model": "admin.logentry",
+    "pk": 58
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-20T11:31:39.380Z",
+        "object_repr": "Scottish Visualization Appplication lamaassum",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 15
+    },
+    "model": "admin.logentry",
+    "pk": 59
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T01:28:25.501Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "6",
+        "change_message": "Changed about_me and website.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 60
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T01:30:15.046Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "14",
+        "change_message": "Changed first_name, last_name and email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 61
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T01:39:05.288Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "6",
+        "change_message": "No fields changed.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 62
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T01:40:45.382Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "6",
+        "change_message": "Changed topic_choices.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 63
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T11:42:07.681Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "6",
+        "change_message": "No fields changed.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 64
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T12:26:16.787Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "6",
+        "change_message": "Changed picture.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 65
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T12:35:40.586Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "6",
+        "change_message": "No fields changed.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 66
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T12:45:27.490Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "6",
+        "change_message": "Changed picture.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 67
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T14:13:00.283Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "10",
+        "change_message": "Changed first_name, last_name and email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 68
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T14:13:34.105Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "3",
+        "change_message": "Changed picture.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 69
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T14:14:07.810Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "3",
+        "change_message": "Changed about_me.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 70
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T14:14:14.307Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "3",
+        "change_message": "No fields changed.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 71
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T14:14:47.687Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "2",
+        "change_message": "No fields changed.",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 72
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-21T15:13:59.056Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "2",
+        "change_message": "No fields changed.",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 73
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T11:46:10.098Z",
+        "object_repr": "jameslanzon",
+        "object_id": "8",
+        "change_message": "Changed topic_choices.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 74
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T15:48:41.196Z",
+        "object_repr": "juliewilliamson",
+        "object_id": "15",
+        "change_message": "Changed first_name, last_name and email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 75
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:06.091Z",
+        "object_repr": "jameslanzon",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 76
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:06.092Z",
+        "object_repr": "ziyhou",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 77
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:06.093Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 78
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:06.094Z",
+        "object_repr": "leifazzopardi",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 79
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:06.095Z",
+        "object_repr": "lamaassum",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 80
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:06.096Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 81
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:06.098Z",
+        "object_repr": "juliewilliamson",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 82
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:06.100Z",
+        "object_repr": "carolstewart",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 83
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.445Z",
+        "object_repr": "Emulation",
+        "object_id": "12",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 84
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.447Z",
+        "object_repr": "Compilers",
+        "object_id": "11",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 85
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.448Z",
+        "object_repr": "Fuzzy Logic",
+        "object_id": "10",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 86
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.449Z",
+        "object_repr": "Virtual Reality",
+        "object_id": "9",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 87
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.450Z",
+        "object_repr": "Graph Theory",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 88
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.451Z",
+        "object_repr": "Neural Networks",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 89
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.452Z",
+        "object_repr": "Databases",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 90
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.454Z",
+        "object_repr": "Information Retrieval",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 91
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.457Z",
+        "object_repr": "Augmented Reality",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 92
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.459Z",
+        "object_repr": "Django",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 93
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.460Z",
+        "object_repr": "Internet Technologies",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 94
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:19.461Z",
+        "object_repr": "Human Computer Interaction",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 95
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:33.986Z",
+        "object_repr": "School of Chemistry",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 96
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:33.988Z",
+        "object_repr": "School of Computing",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 97
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:52.934Z",
+        "object_repr": "alssum",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 98
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:52.935Z",
+        "object_repr": "carolstewart",
+        "object_id": "12",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 99
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:52.936Z",
+        "object_repr": "jameslanzon",
+        "object_id": "17",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 100
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:52.937Z",
+        "object_repr": "juliewilliamson",
+        "object_id": "15",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 101
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:52.938Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "10",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 102
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:52.939Z",
+        "object_repr": "lamaassum",
+        "object_id": "11",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 103
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:52.941Z",
+        "object_repr": "leifazzopardi",
+        "object_id": "16",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 104
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:52.942Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "14",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 105
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:22:52.944Z",
+        "object_repr": "ziyhou",
+        "object_id": "13",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 106
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T17:26:28.359Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "18",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 107
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T17:26:43.238Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "18",
+        "change_message": "Changed first_name, last_name and email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 108
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T17:27:53.368Z",
+        "object_repr": "Computing School",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 109
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T17:28:02.728Z",
+        "object_repr": "HCI",
+        "object_id": "13",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 110
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T17:28:12.024Z",
+        "object_repr": "Augmented Reality",
+        "object_id": "14",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 111
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:31:15.778Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "18",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 112
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T17:35:07.763Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "19",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 113
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T17:35:20.200Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "19",
+        "change_message": "Changed first_name, last_name and email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 114
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:43:08.619Z",
+        "object_repr": "Augmented Reality",
+        "object_id": "14",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 115
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:43:08.657Z",
+        "object_repr": "HCI",
+        "object_id": "13",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 116
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:43:22.900Z",
+        "object_repr": "Computing School",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 117
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:43:36.377Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "19",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 118
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T17:45:24.338Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "20",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 119
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T17:45:36.431Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "20",
+        "change_message": "Changed first_name, last_name and email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 120
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T17:46:02.039Z",
+        "object_repr": "HCI",
+        "object_id": "15",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 121
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T17:46:17.245Z",
+        "object_repr": "Computing School",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 122
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:55:04.793Z",
+        "object_repr": "HCI",
+        "object_id": "15",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 123
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:55:16.964Z",
+        "object_repr": "Computing School",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 124
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T17:59:35.588Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "20",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 125
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T17:59:46.460Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "21",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 126
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T18:00:14.547Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "21",
+        "change_message": "Changed first_name, last_name and email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 127
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T18:00:57.336Z",
+        "object_repr": "Computing School",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 9
+    },
+    "model": "admin.logentry",
+    "pk": 128
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T18:01:03.372Z",
+        "object_repr": "HCI",
+        "object_id": "16",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 129
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T18:42:26.122Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 130
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T18:43:20.701Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 131
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T18:44:00.043Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 132
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T18:45:35.980Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 133
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T18:45:47.948Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 134
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T18:48:15.378Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "2",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 135
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T18:48:43.647Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 136
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T18:48:51.026Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "3",
+        "change_message": "No fields changed.",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 137
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-03-22T18:56:08.793Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "3",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 138
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T18:58:10.925Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "4",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 139
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:08:00.765Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "22",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 140
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T19:08:10.884Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "22",
+        "change_message": "Changed first_name, last_name, email and is_staff.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 141
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:08:23.844Z",
+        "object_repr": "juliewilliamson",
+        "object_id": "23",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 142
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T19:08:39.700Z",
+        "object_repr": "juliewilliamson",
+        "object_id": "23",
+        "change_message": "Changed first_name, last_name and email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 143
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:09:01.062Z",
+        "object_repr": "leifazzopardi",
+        "object_id": "24",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 144
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T19:09:17.257Z",
+        "object_repr": "leifazzopardi",
+        "object_id": "24",
+        "change_message": "Changed first_name, last_name and email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 145
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T19:09:37.397Z",
+        "object_repr": "lama",
+        "object_id": "1",
+        "change_message": "Changed first_name and last_name.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 146
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:09:55.588Z",
+        "object_repr": "carolstewart",
+        "object_id": "25",
+        "change_message": "",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 147
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T19:10:08.593Z",
+        "object_repr": "carolstewart",
+        "object_id": "25",
+        "change_message": "Changed first_name, last_name and email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 148
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T19:10:16.094Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "22",
+        "change_message": "Changed email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 149
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-03-22T19:10:25.566Z",
+        "object_repr": "lama",
+        "object_id": "1",
+        "change_message": "Changed email.",
+        "user": 1,
+        "content_type": 4
+    },
+    "model": "admin.logentry",
+    "pk": 150
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:20:06.784Z",
+        "object_repr": "Internet Technologies",
+        "object_id": "17",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 151
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:20:21.428Z",
+        "object_repr": "Virtual Reality",
+        "object_id": "18",
+        "change_message": "",
+        "user": 1,
+        "content_type": 10
+    },
+    "model": "admin.logentry",
+    "pk": 152
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:21:38.968Z",
+        "object_repr": "carolstewart",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 153
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:22:19.305Z",
+        "object_repr": "juliewilliamson",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 154
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:22:38.234Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 155
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:22:56.787Z",
+        "object_repr": "leifazzopardi",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 156
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:23:20.064Z",
+        "object_repr": "lama",
+        "object_id": "9",
+        "change_message": "",
+        "user": 1,
+        "content_type": 11
+    },
+    "model": "admin.logentry",
+    "pk": 157
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:24:07.937Z",
+        "object_repr": "carolstewart",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 158
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:24:20.215Z",
+        "object_repr": "kriscamilleri",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 159
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:24:34.626Z",
+        "object_repr": "lama",
+        "object_id": "8",
+        "change_message": "",
+        "user": 1,
+        "content_type": 14
+    },
+    "model": "admin.logentry",
+    "pk": 160
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:24:50.499Z",
+        "object_repr": "leifazzopardi",
+        "object_id": "5",
+        "change_message": "",
+        "user": 1,
+        "content_type": 12
+    },
+    "model": "admin.logentry",
+    "pk": 161
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:25:09.638Z",
+        "object_repr": "juliewilliamson",
+        "object_id": "6",
+        "change_message": "",
+        "user": 1,
+        "content_type": 12
+    },
+    "model": "admin.logentry",
+    "pk": 162
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:25:21.713Z",
+        "object_repr": "stephenbrewster",
+        "object_id": "7",
+        "change_message": "",
+        "user": 1,
+        "content_type": 12
+    },
+    "model": "admin.logentry",
+    "pk": 163
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-03-22T19:26:06.363Z",
+        "object_repr": "Super Mega Ultra Project",
+        "object_id": "1",
+        "change_message": "",
+        "user": 1,
+        "content_type": 13
+    },
+    "model": "admin.logentry",
+    "pk": 164
+}
+]

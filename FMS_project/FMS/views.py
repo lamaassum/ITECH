@@ -92,6 +92,7 @@ def search(request):
             found_entries = Topic.objects.filter(query).order_by('-name') # your model
             outputList = {}
             i=0
+            output = ''
             outputHTML =['']
             mail = str(user.email).lower()
             if mail.find('student') != -1:
