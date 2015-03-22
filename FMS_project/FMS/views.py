@@ -80,11 +80,42 @@ def search(request):
                     if es_count[i] != 0:
                         outputHTML.append('<div class="jumbotron"> <h2>'+str(entry)+'</h2> \n')
                         for x in returned_users:
-                            outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title">' + str(x) + '</h3> </div><div class="panel-body"> ::before  Panel content ::after </div></div>')
+                            outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title">'
+                                              + str(x.user_profile.user.first_name) + ' ' + str(x.user_profile.user.last_name) + '</h3> </div><div class="panel-body"> ' #HEADER
+                                              )
+                            try:
+                                if str(x.user_profile.email) != '':
+                                    outputHTML.append(str(x.user_profile.user.email) + '<br></br>')
+                            except:
+                                print 'email not supplied'
+                            try:
+                                if str(x.user_profile.website) != '':
+                                    outputHTML.append(str(x.user_profile.website) + '<br></br>')
+                            except:
+                                print 'website not supplied'
+                            try:
+                                z=0
+                                length = len(x.user_profile.topic_choices.all())
+                                for each in x.user_profile.topic_choices.all():
+                                    if z != length-1:
+                                        outputHTML.append(each.name + ', ')
+                                    else:
+                                        outputHTML.append(each.name + '<br></br>')
+                                    z+= 1
+                            except:
+                                print 'topics not supplied'
+                            try:
+                                if str(x.user_profile.about_me) != '':
+                                    outputHTML.append(str(x.user_profile.about_me))
+                            except:
+                                print 'about me not supplied'
+                            outputHTML.append('</div></div>')
+
+
                         outputHTML.append('</div>')
                         i= i+1
                         output = ''.join(outputHTML)
-                print output
+
             else:
                 for entry in found_entries:
                     if i == 0:
@@ -106,7 +137,7 @@ def search(request):
                         outputHTML.append('</div>')
                         i= i+1
                         output = ''.join(outputHTML)
-                print output
+            print output
             return render(request, 'FMS/search.html', {'found_entries':found_entries, 'outputHTML':output })
     else:
         form = SearchForm()
