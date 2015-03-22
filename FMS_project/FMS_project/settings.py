@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'FMS',
     'registration',
     'ajax_search',
+
 )
 
 MIDDLEWARE_CLASSES = (

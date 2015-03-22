@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from models import User, UserProfile, Supervisor, Student, Topic
 from forms import SearchForm
+from itertools import chain
 
 def index(request):
 
@@ -42,6 +43,7 @@ def my_profile(request):
 
 # views.py
 def search(request):
+
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
@@ -57,12 +59,33 @@ def search(request):
                     else:
                         query = query | qry
             found_entries = Topic.objects.filter(query).order_by('-name') # your model
-            outputList = []
+            outputList = {}
+            i=0
+            outputHTML =['']
             for entry in found_entries:
-                found_supervisors = Supervisor.objects.filter(user_profile__topic_choices=entry)
-                print str(entry) + ':' + str(found_supervisors)
 
-            return render(request, 'FMS/search.html', {'found_supervisors':found_supervisors, 'found_entries':found_entries})
+                if i == 0:
+                    returned_supervisors = Supervisor.objects.filter(user_profile__topic_choices=entry)
+                    found_supervisors = returned_supervisors
+                    es_count = [len(found_supervisors)]
+                    print es_count[i]
+
+                else:
+                    returned_supervisors = Supervisor.objects.filter(user_profile__topic_choices=entry)
+                    found_supervisors = found_supervisors | returned_supervisors
+                    es_count.append(len(returned_supervisors))
+                    print es_count[i]
+                print entry
+                if es_count[i] != 0:
+                    outputHTML.append('<div class="jumbotron"> <h2>'+str(entry)+'</h2> \n')
+                    for x in returned_supervisors:
+                        outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title">' + str(x) + '</h3> </div><div class="panel-body"> ::before  Panel content ::after </div></div>')
+                    outputHTML.append('</div>')
+                    i= i+1
+                    output = ''.join(outputHTML)
+            print output
+
+            return render(request, 'FMS/search.html', {'found_entries':found_entries, 'outputHTML':output })
     else:
         form = SearchForm()
         return render(request, 'FMS/search.html', {'form':form})
