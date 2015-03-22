@@ -62,6 +62,14 @@ def profile(request, user_name_slug):
         pass
     return
 
+'''def favorite_supervisor(request):
+    if request.user.is_authenticated():
+        user = request.user
+        if not user.email.find('student') == -1:
+            profile = UserProfile.objects.filter(user=user)
+    else:
+        return HttpResponse("You are not logged in.")'''
+
 
 
 # views.py
