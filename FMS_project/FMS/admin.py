@@ -1,5 +1,5 @@
 from django.contrib import admin
-from FMS.models import School, Topic, UserProfile, Supervisor, Project, Student, Application
+from models import School, Topic, UserProfile, Supervisor, Project, Student, Application
 # Register your models here.
 admin.site.register(School)
 admin.site.register(Topic)

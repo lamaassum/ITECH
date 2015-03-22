@@ -4,7 +4,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from models import User, UserProfile, Supervisor, Student, Topic
 from forms import SearchForm
-from itertools import chain
 
 def index(request):
 
