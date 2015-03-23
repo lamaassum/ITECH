@@ -3,23 +3,59 @@ import re
 from django.shortcuts import render
 from django.http import HttpResponse
 from FMS_project import settings
-from models import User, UserProfile, Supervisor, Student, Topic
+from models import User, UserProfile, Supervisor, Student, Topic, Project
 from forms import UserForm
 
 from forms import SearchForm
 
+#http://stackoverflow.com/questions/2170900/get-first-list-index-containing-sub-string-in-python
+def index_containing_substring(the_list, substring):
+    for i, s in enumerate(the_list):
+        if substring in s:
+              return i
+    return -1
+
 def index(request):
 
+    user = request.user
     if request.user.is_authenticated():
-        # Construct a dictionary to pass to the template engine as its context.
-        # Note the key boldmessage is the same as {{ boldmessage }} in the template!
-        #context_dict = {'boldmessage': "Hello World!"}
+        isStaff = True
+        if str((user.email).lower()).find('student') > -1:
+            isStaff = False
+        print isStaff
+        if isStaff == False:
+            users = Supervisor.objects.all()
+        else:
+            users = Student.objects.all()
 
-        # Return a rendered response to send to the client.
-        # We make use of the shortcut function to make our lives easier.
-        # Note that the first parameter is the template we wish to use.
+        userObj = User.objects.get(username=user.username)
+        profile = UserProfile.objects.filter(user=userObj)[0]
+        projects = Project.objects.all()
+        projectList = []
+        topic_choices =  profile.topic_choices.all()
+        for each in topic_choices:
+            print "TOPIC : " + str(each)
+            project_topics = Project.objects.filter(project_topic=each)
+            for j in project_topics:
+                if str(projectList).find(str(j)) == -1:
+                 projectList.append(j)
+        a = 0
+        projects = Project.objects.none()
+        while a < len(projectList):
+            print str(a) + ": " + str(projectList[a])
+            projects = Project.objects.filter(title=str(projectList[a])) | projects
+            a+=1
+        projectOutput = ''.join(str(projectList))
+        print projectOutput
+        projectList = Project.objects.none()
 
-        return render(request, 'FMS/index.html')
+
+
+
+
+
+
+        return render(request, 'FMS/index.html', {'projects':projects, 'users':users})
     else:
         return HttpResponse("You are not logged in.")
 

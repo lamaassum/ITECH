@@ -4,47 +4,91 @@
 
 {% block title %}Index{% endblock %}
 
-        {% block body_block %}
+{% block body_block %}
 {% if user.is_authenticated %}
-    <div class="page-header">
+<div class="page-header">
 
-                <h1>Hello {{ user.username }}!</h1>
-            {% else %}
-                <h1>Not Logged In</h1>
-            {% endif %}
+    <h2>Dashboard</h2>
+    <h4>Feel free to use the search above, or dive right in with some of our recommendations. </h4>
+    {% else %}
+    <h1>Not Logged In</h1>
+    {% endif %}
 </div>
 
-         <div class="row placeholders">
-            <div class="col-xs-12 col-sm-6 placeholder">
-               <h4>Categories</h4>
+<div class="row placeholders">
+    <div class="col-xs-12 col-sm-6 placeholder">
+        {% if user.userprofile.supervisor.job_title %}
+            <h2> Students sharing my interests</h2>
+        {% else %}
+            <h2> Supervisors sharing my interests</h2>
+        {% endif %}
 
-              {% if categories %}
-                    <ul>
-                        {% for category in categories %}
-                         <li><a href="{% url 'category'  category.slug %}">{{ category.name }}</a></li>
+        {% if users %}
+        <div>
+            {% for user in users %}
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a href="{{user.user_profile.slug}}">{{ user.user_profile.user.first_name }} {{user.user_profile.user.last_name }}</a>
+
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    {% if user.job_title %}
+                    <h4> {{user.job_title }}</h4>
+                    {% endif %}
+                    {% if user.major %}
+                    <h4> {{user.degree}}, {{user.major}}</h4>
+                    {% endif %}
+                    {% for t in user.user_profile.topic_choices.all %}
+
+                        {% if forloop.last %}
+                            {{ t.name }}.
+                        {% else %}
+                            {{ t.name }},
+                        {% endif %}
                         {% endfor %}
-                    </ul>
-                {% else %}
-                    <strong>There are no categories present.</strong>
-                {% endif %}
 
+
+
+                </div>
             </div>
-            <div class="col-xs-12 col-sm-6 placeholder">
-              <h4>Pages</h4>
+            {% endfor %}
+        </div>
+        {% else %}
+        <strong>There are no users present.</strong>
+        {% endif %}
 
-                {% if pages %}
-                    <ul>
-                        {% for page in pages %}
-                         <li><a href="{{page.url}}">{{ page.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                    <strong>There are no categories present.</strong>
-                {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-6 placeholder">
+        <h2>Projects with one of my interests</h2>
+
+         {% if projects %}
+        <div>
+            {% for project in projects %}
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a href="{{project.slug}}">{{ project.title }}</a>
+
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    {% if project.description %}
+                    {{project.description}}
+                    {% endif %}
+                </div>
             </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <strong>There are no projects present.</strong>
+        {% endif %}
 
-          </div>
+    </div>
+
+</div>
 
 
-       <p> visits: {{ visits }}</p>
-        {% endblock %}
+<p> visits: {{ visits }}</p>
+{% endblock %}
