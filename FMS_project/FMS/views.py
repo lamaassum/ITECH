@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from FMS_project import settings
 from models import User, UserProfile, Supervisor, Student, Topic
+from forms import UserForm
 
 from forms import SearchForm
 
@@ -41,13 +42,21 @@ def my_profile(request):
     else:
         return HttpResponse("You are not logged in.")
 
+def profile_form(request):
+    if request.user.is_authenticated():
+        form = UserForm()
+        return render(request, 'FMS/profile_form.html',{'form':form})
+    else:
+        return HttpResponse("You are not logged in.")
+
+
 #profile page
 def profile(request, user_name_slug):
     context_dict = {}
 
     try:
-        profile = UserProfile.objects.filter(slug=user_name_slug)[0]
-        topics = profile.topic_choices
+        profile = UserProfile.objects.get(slug=user_name_slug)
+        topics = profile.topic_choices.all()
         user = profile.user
 
         if not user.email.find('student') == -1:
@@ -58,11 +67,11 @@ def profile(request, user_name_slug):
             is_supervisor = True
 
         context_dict = {'user': user, 'profile': profile, 'topics': topics, 'details': details, 'is_supervisor': is_supervisor}
-        return render(request, 'FMS/profile.html', context_dict)
+
 
     except UserProfile.DoesNotExist:
         pass
-    return
+    return render(request, 'FMS/profile.html', context_dict)
 
 '''def favorite_supervisor(request):
     if request.user.is_authenticated():
