@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^FMS/', include('FMS.urls')),
     (r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^search/$', views.search, name='search_for_something'),
+    url(r'^/$', views.search, name='search_for_something'),
 
     )
     

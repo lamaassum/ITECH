@@ -34,9 +34,9 @@
 
                 <div class="pull-right"
                      role="search">
-                    <form class="navbar-form" role="search" method="POST" action="{% url 'search_for_something' %}">
+                    <form class="navbar-form" role="search" method="GET" action="{% url 'search_for_something' %}">
                         <div class="input-group">
-                            {% csrf_token %}
+                            <!--{% csrf_token %} -->
                             {{ form.search }}
                             <div class="input-group-btn">
                                 <input type="text" class="form-control" placeholder="Search" name="search" id="search">

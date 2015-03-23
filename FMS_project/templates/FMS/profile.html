@@ -79,7 +79,7 @@
         {% if topics %}
             <h3>Interests</h3>
             <ul>
-            {% for t in topics %}
+            {% for t in topics.all %}
                 <li>{{ t.name }}</li>
             {% endfor %}
             </ul>

@@ -78,8 +78,8 @@ def profile(request, user_name_slug):
 def search(request):
     user = request.user
     output = ' '
-    if request.method == 'POST':
-        form = SearchForm(request.POST)
+    if request.method == 'GET':
+        form = SearchForm(request.GET)
         if form.is_valid():
             string = form.cleaned_data['search']
             terms = re.compile(r'[^\s",;.:]+').findall(string)
@@ -117,7 +117,7 @@ def search(request):
                         if es_count[i] != 0:
                             outputHTML.append('<div class="jumbotron"> <h2>'+str(entry)+'</h2> \n')
                             for x in returned_users:
-                                outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title">'
+                                outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/FMS/' + str(x.user_profile.slug) +'"> '
                                                   + str(x.user_profile.user.first_name) + ' ' + str(x.user_profile.user.last_name) + '</h3> </div><div class="panel-body"> ' #HEADER
                                                   )
                                 outputHTML.append('  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" '+str(settings.MEDIA_URL) + "profile_images/avatar.jpg" +' "/></div></a>')
@@ -171,7 +171,7 @@ def search(request):
                         if es_count[i] != 0:
                             outputHTML.append('<div class="jumbotron"> <h2>'+str(entry)+'</h2> \n')
                             for x in returned_users:
-                                outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title">'
+                                outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/FMS/' + str(x.user_profile.slug) +'"> '
                                                   + str(x.user_profile.user.first_name) + ' ' + str(x.user_profile.user.last_name) + '</h3> </div><div class="panel-body"> ' #HEADER
                                                   )
                                 outputHTML.append('  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" '+str(settings.MEDIA_URL) + "profile_images/avatar.jpg" +' "/></div></a>')
@@ -222,15 +222,30 @@ def search(request):
                             query = query | qry
                 returned_users = User.objects.filter(query)
 
+
                 outputHTML.append('<div class="jumbotron"> <h2> Users </h2> \n')
                 for x in returned_users:
                     profile = UserProfile.objects.filter(user=x)[0]
+                    userTypeOutput = True
+
+                    try:
+                        userType = Supervisor.objects.filter(user_profile=profile)[0]
+                        userTypeString = userType.job_title
+                        print userType.job_title
+                    except:
+                        userType = Student.objects.filter(user_profile=profile)[0]
+                        userTypeOutput = False
+                        userTypeString = 'Student'
+                        print userType.major
+
+                    print 'studentType'
+                    print "SLUG: " + str(profile.slug)
                     outputHTML.append(
-                        ' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title">'
-                        + str(x.first_name) + ' ' + str(
-                            x.last_name) + '</h3> </div><div class="panel-body"> '
+                        ' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/FMS/' + str(profile.slug) +'"> '
+                        + str(x.first_name) + ' ' + str(x.last_name) + ' (' + userTypeString + ')' + '</h3> </div><div '
+                        'class="panel-body"> ' )
                         # HEADER
-                        )
+
                     outputHTML.append(
                         '  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" ' + str(
                             settings.MEDIA_URL) + "profile_images/avatar.jpg" + ' "/></div></a>')
