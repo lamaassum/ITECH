@@ -44,10 +44,10 @@ def my_profile(request):
 
 def profile_form(request):
     if request.user.is_authenticated():
-        form = UserForm()
-        return render(request, 'FMS/profile_form.html',{'form':form})
+        pass
     else:
-        return HttpResponse("You are not logged in.")
+        pass
+
 
 
 #profile page

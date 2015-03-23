@@ -1,13 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body_block %}
-<html>
 
-    <head>
-        <title>FMS</title>
-    </head>
-
-    <body>
        {% if user %}
        <a href="{% url 'profile_form' %}">Edit Profile</a>
             <div>
@@ -80,7 +74,7 @@
         {% if topics %}
             <h3>Interests</h3>
             <ul>
-            {% for t in topics.all %}
+            {% for t in topics %}
                 <li>{{ t.name }}</li>
             {% endfor %}
             </ul>
@@ -88,8 +82,4 @@
         </div>
        {% endif %}
 
-
-    </body>
-
-</html>
 {% endblock %}
