@@ -9,4 +9,3 @@ urlpatterns = patterns('',
     url(r'^(?P<user_name_slug>[\w\-]+)/$', views.profile, name='profile'),
     )
 
-
