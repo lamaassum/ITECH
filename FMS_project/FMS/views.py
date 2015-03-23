@@ -212,6 +212,7 @@ def search(request):
                                         outputHTML.append(str(x.user_profile.about_me))
                                 except:
                                     print 'about me not supplied'
+
                                 outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
                             outputHTML.append('</div>')
                             i= i+1
@@ -231,11 +232,15 @@ def search(request):
                             query = query | qry
                 returned_users = User.objects.filter(query)
 
-
-                outputHTML.append('<div class="jumbotron"> <h2> Users </h2> \n')
+                mail = str(user.email).lower()
+                if (mail.find('student')):
+                    heading = 'Supervisors'
+                else:
+                    heading = 'Students'
+                outputHTML.append('<div class="jumbotron"> <h2> '+ heading + ' </h2> \n')
                 for x in returned_users:
                     profile = UserProfile.objects.filter(user=x)[0]
-                    userTypeOutput = True
+                    isStaff = True
 
                     try:
                         userType = Supervisor.objects.filter(user_profile=profile)[0]
@@ -243,50 +248,53 @@ def search(request):
                         print userType.job_title
                     except:
                         userType = Student.objects.filter(user_profile=profile)[0]
-                        userTypeOutput = False
+                        isStaff = False
                         userTypeString = 'Student'
-                        print userType.major
 
-                    print 'studentType'
-                    print "SLUG: " + str(profile.slug)
-                    outputHTML.append(
-                        ' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/FMS/' + str(profile.slug) +'"> '
-                        + str(x.first_name) + ' ' + str(x.last_name) + ' (' + userTypeString + ')' + '</h3> </div><div '
-                        'class="panel-body"> ' )
-                        # HEADER
+                        print str(mail.find('student')) + ', ' + str(isStaff)
+                    if (mail.find('student') == -1) and  (isStaff == False):
+                        print "AUSIDBNAOSDI"
+                    if ((mail.find('student') == -1) and  (isStaff == False)) or ((mail.find('student') != -1) and  (isStaff == True)):
+                        print 'studentType'
+                        print "SLUG: " + str(profile.slug)
+                        outputHTML.append(
+                            ' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/FMS/' + str(profile.slug) +'"> '
+                            + str(x.first_name) + ' ' + str(x.last_name) + ' (' + userTypeString + ')' + '</h3> </div><div '
+                            'class="panel-body"> ' )
+                            # HEADER
 
-                    outputHTML.append(
-                        '  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" ' + str(
-                            settings.MEDIA_URL) + "profile_images/avatar.jpg" + ' "/></div></a>')
-                    outputHTML.append('<dl>')
-                    try:
-                        if str(x.email) != '':
-                            outputHTML.append('<dt>' + str(x.email) + '</dt>')
-                    except:
-                        print 'email not supplied'
-                    try:
-                        if str(profile.website) != '':
-                            outputHTML.append('<dt>' + str(profile.website) + '</dt>')
-                    except:
-                        print 'website not supplied'
-                    try:
-                        z = 0
-                        length = len(profile.topic_choices.all())
-                        for each in profile.topic_choices.all():
-                            outputHTML.append('<dt>')
-                            if z != length - 1:
-                                outputHTML.append(each.name + ', ')
-                            else:
-                                outputHTML.append(each.name + '</dt>')
-                            z += 1
-                    except:
-                        print 'topics not supplied'
-                    try:
-                        if str(profile.about_me) != '':
-                            outputHTML.append(str(profile.about_me))
-                    except:
-                        print 'about me not supplied'
-                    outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
+                        outputHTML.append(
+                            '  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" ' + str(
+                                settings.MEDIA_URL) + "profile_images/avatar.jpg" + ' "/></div></a>')
+                        outputHTML.append('<dl>')
+                        try:
+                            if str(x.email) != '':
+                                outputHTML.append('<dt>' + str(x.email) + '</dt>')
+                        except:
+                            print 'email not supplied'
+                        try:
+                            if str(profile.website) != '':
+                                outputHTML.append('<dt>' + str(profile.website) + '</dt>')
+                        except:
+                            print 'website not supplied'
+                        try:
+                            z = 0
+                            length = len(profile.topic_choices.all())
+                            for each in profile.topic_choices.all():
+                                outputHTML.append('<dt>')
+                                if z != length - 1:
+                                    outputHTML.append(each.name + ', ')
+                                else:
+                                    outputHTML.append(each.name + '</dt>')
+                                z += 1
+                        except:
+                            print 'topics not supplied'
+                        try:
+                            if str(profile.about_me) != '':
+                                outputHTML.append(str(profile.about_me))
+                        except:
+                            print 'about me not supplied'
+                        outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
                 outputHTML.append('</div>')
 
                 output = ''.join(outputHTML)
