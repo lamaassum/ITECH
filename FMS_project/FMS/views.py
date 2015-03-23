@@ -44,9 +44,10 @@ def my_profile(request):
 
 def profile_form(request):
     if request.user.is_authenticated():
-        pass
+        context_dict = {'boldmessage': "Hello World!"}
+        return render(request, 'FMS/profile_form.html', context_dict)
     else:
-        pass
+        return HttpResponse("You are not logged in.")
 
 
 
