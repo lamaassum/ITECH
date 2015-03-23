@@ -9,6 +9,7 @@
 
     <body>
        {% if user %}
+       <a href="{% url 'profile_form' %}">Edit Profile</a>
             <div>
             {% if profile.picture %}
             <img src="{{ MEDIA_URL }}{{ profile.picture }}"/>
