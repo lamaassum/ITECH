@@ -48,13 +48,6 @@ def index(request):
         projectOutput = ''.join(str(projectList))
         print projectOutput
         projectList = Project.objects.none()
-
-
-
-
-
-
-
         return render(request, 'FMS/index.html', {'projects':projects, 'users':users})
     else:
         return HttpResponse("You are not logged in.")
