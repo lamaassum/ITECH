@@ -8,4 +8,5 @@ urlpatterns = patterns('',
     url(r'^my_profile/$', views.my_profile, name='my_profile'),
     url(r'^profile_form/$', views.profile_form, name='profile_form'),
     url(r'^(?P<user_name_slug>[\w\-]+)/$', views.profile, name='profile'),
+    url(r'^favorite_supervisor/$', views.favorite_supervisor, name='favorite_supervisor'),
     )

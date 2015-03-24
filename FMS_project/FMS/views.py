@@ -182,8 +182,8 @@ def profile_form(request):
                     details.advisor_email = request.POST.get('advisor_email')
                 details.save()
 
-
-                return render(request, 'FMS/index.html')
+                context_dict = {'user': userObj, 'profile': profile, 'topics': profile.topic_choices.all, 'details': details, 'is_mine': True}
+                return render(request, 'FMS/profile.html',context_dict)
             '''else:
                 print user_form.errors
                 print user_profile_form.errors
@@ -584,7 +584,13 @@ def project(request):
 def search(request):'''
 
 def favorite_supervisor(request):
+
     if request.user.is_authenticated():
         user = request.user
+        profile = UserProfile.objects.filter(user=user)[0]
+        student = Student.objects.filter(user_profile = profile)[0]
+        list = student.supervisor_choices.all()
+        return render(request, 'FMS/search_results.html', {'found_users':list})
+
     else:
         return HttpResponse("You are not logged in.")

@@ -33,14 +33,14 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{% url 'index' %}">Home</a></li>
                         {% if user.is_authenticated %}
-                        <li><a href="{% url 'index' %}">Restricted Page</a></li>
+                        <li><a href="{% url 'advanced_student_search_form' %}">Advanced Search</a></li>
                         <li><a href="http://127.0.0.1:8000/accounts/logout/">Logout</a></li>
                         <li><a href="{% url 'my_profile' %}">My Profile</a></li>
                         {% else %}
                         <li><a href="{% url 'index' %}">Register Here</a></li>
                         <li><a href="{% url 'index' %}">Login</a></li>
                         {% endif %}
-                        <li><a href="{% url 'index' %}">About</a></li>
+                        
                     </ul>
                 </div>
             </div>
