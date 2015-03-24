@@ -89,7 +89,7 @@ def profile_form(request):
                 user_form.save(commit=True)
                 user_profile_form.save(commit=True)
                 details_form.save(commit=True)
-                return render(request, 'FMS/index.html')
+                return render(request, 'FMS/my_profile.html')
             else:
                 print user_form.errors
                 print user_profile_form.errors
@@ -582,3 +582,9 @@ def search(request):
 def project(request):
 
 def search(request):'''
+
+def favorite_supervisor(request):
+    if request.user.is_authenticated():
+        user = request.user
+    else:
+        return HttpResponse("You are not logged in.")
