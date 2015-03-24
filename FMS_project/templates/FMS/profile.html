@@ -74,7 +74,9 @@
 <div class="jumbotron f-jumbotron">
 {% if user %}
     <div>
+    {% if is_mine %}
 <a class="f-edit" href="{% url 'profile_form' %}" title="Edit Profile">Edit Profile  <i class="glyphicon glyphicon-edit"></i></a>
+    {% endif %}
 <table>
 <tr>
     <td>

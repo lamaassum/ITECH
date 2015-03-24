@@ -59,7 +59,7 @@ def my_profile(request):
         else:
             details = Supervisor.objects.filter(user_profile=profile)[0]
             is_supervisor = True
-        context_dict = {'user': userObj, 'profile': profile, 'topics': topics, 'details': details, 'is_supervisor': is_supervisor}
+        context_dict = {'user': userObj, 'profile': profile, 'topics': topics, 'details': details, 'is_supervisor': is_supervisor, 'is_mine': True}
         return render(request, 'FMS/profile.html', context_dict)
     else:
         return HttpResponse("You are not logged in.")
@@ -118,12 +118,102 @@ def profile(request, user_name_slug):
             details = Supervisor.objects.filter(user_profile=profile)[0]
             is_supervisor = True
 
-        context_dict = {'user': user, 'profile': profile, 'topics': topics, 'details': details, 'is_supervisor': is_supervisor}
+        context_dict = {'user': user, 'profile': profile, 'topics': topics, 'details': details, 'is_supervisor': is_supervisor, 'is_mine': False}
 
 
     except UserProfile.DoesNotExist:
         pass
     return render(request, 'FMS/profile.html', context_dict)
+
+def profile_form(request):
+
+    if request.user.is_authenticated():
+
+
+        user = request.user
+        userObj = User.objects.get(username=user.username)
+        profile = UserProfile.objects.filter(user=userObj)[0]
+
+
+        if not userObj.email.find('student') == -1:
+            details = Student.objects.filter(user_profile=profile)[0]
+
+        else:
+            details = Supervisor.objects.filter(user_profile=profile)[0]
+
+
+
+        if request.method == 'POST':
+            user_form = UserForm(data=request.POST)
+            user_profile_form = UserProfileForm(request.POST, request.FILES)
+            if request.user.email.find('student') == -1:
+                details_form = SupervisorForm(data=request.POST)
+
+            else:
+                details_form = StudentForm(data=request.POST)
+
+
+            if user_form.is_valid() and user_profile_form.is_valid() and details_form.is_valid():
+                userObj.first_name = request.POST.get('first_name')
+                userObj.last_name = request.POST.get('last_name')
+                userObj.email = request.POST.get('email')
+                userObj.save()
+
+
+                profile.user = userObj
+                profile.about_me = request.POST.get('about_me')
+                profile.website = request.POST.get('website')
+                profile.schoolID = request.POST.get('schoolID')
+                profile.picture = request.POST.get('image_name')
+                profile.topic_choices = request.POST.getlist('topic_choices')
+                profile.save()
+
+                if userObj.email.find('student') == -1:
+                    details.job_title = request.POST.get('job_title')
+                    details.profile = profile
+                    if(request.POST.get('availability')):
+                        details.availability = True;
+                    else:
+                        details.availability = False;
+                else:
+                    details.degree = request.POST.get('degree')
+                    details.major = request.POST.get('major')
+                    details.advisor = request.POST.get('advisor')
+                    details.advisor_email = request.POST.get('advisor_email')
+                details.save()
+
+
+                return render(request, 'FMS/index.html')
+            '''else:
+                print user_form.errors
+                print user_profile_form.errors
+                print details_form.errors'''
+
+        user_form = UserForm({'first_name':userObj.first_name, 'last_name': userObj.last_name, 'email': userObj.email})
+        '''UserForm.first_name = userObj.first_name
+        user_form.last_name = userObj.last_name
+        user_form.email = userObj.email'''
+
+        user_profile_form = UserProfileForm({'website': profile.website, 'school_ID': profile.school_ID, 'picture': profile.picture,
+        'about_me':profile.about_me, 'topic_choices':profile.topic_choices.all()})
+        '''user_profile_form.website =profile.website
+        #user_profile_form.schoolID =profile.schoolID
+        user_profile_form.picture =profile.picture
+        user_profile_form.about_me =profile.about_me
+        user_profile_form.topic_choices =profile.topic_choices'''
+
+        if not request.user.email.find('student') == -1:
+            details_form = StudentForm({'degree': details.degree, 'major': details.major, 'advisor': details.advisor, 'advisor_email': details.advisor_email})
+
+        else:
+            details_form = SupervisorForm({'job_title':details.job_title, 'availability': details.availability})
+
+
+        context_dict = {'user_form':user_form, 'user_profile_form': user_profile_form, 'details_form': details_form}
+        return render(request, 'FMS/profile_form.html',context_dict)
+
+    else:
+        return HttpResponse("You are not logged in.")
 
 '''def favorite_supervisor(request):
     if request.user.is_authenticated():
