@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html>
-
-    <head>
-        <title>FMS</title>
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% load static %}
+<!-- page title -->
+{% block title %}sent{% endblock %}
+{% block body_block %}
+<!-- page contents -->
+<div class="col-md-4"></div>
+<div class="col-md-4 f-form">
+    <img class="logo" src='{% static "images/logo.png" %}'/>
     {% load i18n %}
-	<p>{% trans "Logged out" %}</p>
-</body>
-</html>
+    <h5 class="f-title f-success">{% trans "Logged out" %}</h5>
+   <div class="col-md-12 main-button">
+       <a class="btn btn-default btn-gray" href="{% url 'auth_login' %}" />{% trans "Log in" %}</a>
+   </div>
+</div>
+<div class="col-md-4"></div>
+<!-- /page contents -->
+{% endblock %}
+

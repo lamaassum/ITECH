@@ -1,22 +1,54 @@
-<!DOCTYPE html>
-<html>
-
-    <head>
-        <title>FMS</title>
-    </head>
-
-    <body>
+{% extends 'base.html' %}
+{% load static %}
+<!-- page title -->
+{% block title %}Login{% endblock %}
+{% block body_block %}
+<!-- page contents -->
+<div class="col-md-4"></div>
+<div class="col-md-4 f-form">
+    <img class="logo" src='{% static "images/logo.png" %}'/>
+    <h4 class="f-title">LOG IN TO YOUR ACCOUNT</h4>
     {% load i18n %}
     <form method="post" action=".">
-  {% csrf_token %} 
-  {{ form.as_p }}
-
-  <input type="submit" value="{% trans 'Log in' %}" />
-  <input type="hidden" name="next" value="{{ next }}" />
-	</form>
-
-<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
-<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
-
-</body>
-</html>
+    {% csrf_token %} 
+    <!-- for loop - output each field separately -->
+    {% for field in form %}
+      {% if field.errors %}
+        <div class="form-group">
+          <label class="col-md-12 control-label">{{ field.label }}</label>
+          <div class="col-md-12 form-c">{{ field }}</div>
+          <div class="controls">
+            <div class="col-md-12">
+              <div class="alert alert-danger f-alert-danger" role="alert">{% for error in  field.errors %}{{ error }}{% endfor %}</div>
+            </div>
+          </div>
+        </div> 
+      {% else %}
+        <div class="form-group">
+          <label class="col-md-12 control-label">{{ field.label }}</label>
+          <div class="col-md-12 form-c">{{ field }}</div>
+        </div>   
+      {% endif %}
+    {% endfor %}
+    <!-- /foor loop -->
+          <div class="col-md-12 main-button">
+            <input type="submit" class="btn btn-default btn-green" value="{% trans 'Log in' %}" />
+            <input type="hidden" name="next" value="{{ next }}" />
+          </div>
+        <div class="form-group">
+          <div class="col-md-1 col-sm-1 col-xs-1"></div>
+          <div class="col-md-10 col-sm-10 col-xs-10">
+            <a class="help-block inline" href="{% url 'auth_password_reset' %}">{% trans "Forgot password" %}? </a><a class="inline help-block" href="{% url 'registration_register' %}">{% trans "Not member" %}? </a>
+          </div>
+          <div class="col-md-1 col-sm-1 col-xs-1"></div>
+        </div>
+    </form>
+</div>
+<div class="col-md-4"></div>
+<!-- /page contents -->
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('.form-c input').addClass('form-control')
+})
+</script>
+{% endblock %}

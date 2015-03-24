@@ -3,52 +3,23 @@ import re
 from django.shortcuts import render
 from django.http import HttpResponse
 from FMS_project import settings
-from models import User, UserProfile, Supervisor, Student, Topic, Project
-from forms import UserForm
+from models import User, UserProfile, Supervisor, Student, Topic
+from forms import UserForm, UserProfileForm, StudentForm, SupervisorForm
 
 from forms import SearchForm
 
-#http://stackoverflow.com/questions/2170900/get-first-list-index-containing-sub-string-in-python
-def index_containing_substring(the_list, substring):
-    for i, s in enumerate(the_list):
-        if substring in s:
-              return i
-    return -1
-
 def index(request):
 
-    user = request.user
     if request.user.is_authenticated():
-        isStaff = True
-        if str((user.email).lower()).find('student') > -1:
-            isStaff = False
-        print isStaff
-        if isStaff == False:
-            users = Supervisor.objects.all()
-        else:
-            users = Student.objects.all()
+        # Construct a dictionary to pass to the template engine as its context.
+        # Note the key boldmessage is the same as {{ boldmessage }} in the template!
+        #context_dict = {'boldmessage': "Hello World!"}
 
-        userObj = User.objects.get(username=user.username)
-        profile = UserProfile.objects.filter(user=userObj)[0]
-        projects = Project.objects.all()
-        projectList = []
-        topic_choices =  profile.topic_choices.all()
-        for each in topic_choices:
-            print "TOPIC : " + str(each)
-            project_topics = Project.objects.filter(project_topic=each)
-            for j in project_topics:
-                if str(projectList).find(str(j)) == -1:
-                 projectList.append(j)
-        a = 0
-        projects = Project.objects.none()
-        while a < len(projectList):
-            print str(a) + ": " + str(projectList[a])
-            projects = Project.objects.filter(title=str(projectList[a])) | projects
-            a+=1
-        projectOutput = ''.join(str(projectList))
-        print projectOutput
-        projectList = Project.objects.none()
-        return render(request, 'FMS/index.html', {'projects':projects[:10], 'users':users[:10]})
+        # Return a rendered response to send to the client.
+        # We make use of the shortcut function to make our lives easier.
+        # Note that the first parameter is the template we wish to use.
+
+        return render(request, 'FMS/index.html')
     else:
         return HttpResponse("You are not logged in.")
 
@@ -72,11 +43,39 @@ def my_profile(request):
         return HttpResponse("You are not logged in.")
 
 def profile_form(request):
-    context_dict = {}
+
     if request.user.is_authenticated():
-        form = UserForm()
-        context_dict = {'form':form}
-        return render(request, 'FMS/profile_form.html',{'form':form})
+
+        user_form = UserForm(prefix="user")
+        user_profile_form = UserProfileForm(prefix="profile")
+        if not request.user.email.find('student') == -1:
+            details_form = StudentForm(prefix="details")
+            is_supervisor = False
+        else:
+            details_form = SupervisorForm(prefix="details")
+            is_supervisor= True
+
+        if request.method == 'POST':
+            user_form = UserForm(request.POST, prefix="user")
+            user_profile_form = UserProfileForm(request.POST, prefix="profile")
+            if is_supervisor:
+                details_form = SupervisorForm(request.POST, prefix="details")
+            else:
+                details_form = StudentForm(request.POST, prefix="details")
+
+            if user_form.is_valid() and user_profile_form.is_valid() and details_form.is_valid():
+                user_form.save(commit=True)
+                user_profile_form.save(commit=True)
+                details_form.save(commit=True)
+                return render(request, 'FMS/index.html')
+            else:
+                print user_form.errors
+                print user_profile_form.errors
+                print details_form.errors
+
+        context_dict = {'user_form':user_form, 'user_profile_form': user_profile_form, 'details_form': details_form}
+        return render(request, 'FMS/profile_form.html',context_dict)
+
     else:
         return HttpResponse("You are not logged in.")
 
