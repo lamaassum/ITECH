@@ -26,7 +26,7 @@
     <div class="col-sm-8 col-md-8  main">
         <div class="row">
             <div class="col-md-1 col-xs-12">
-                <a class="navbar-brand" rel="home" href="/FMS/"> <img style=" margin-top: -7px; " src='{% static "images/logo.png" %}'></a>
+                <a class="navbar-brand" rel="home" href="/"> <img style=" margin-top: -7px; " src='{% static "images/logo.png" %}'></a>
             </div>
             <div class="col-md-8 col-xs-12">
                 <div class="navbar-collapse collapse srch-box">
@@ -84,7 +84,7 @@
             <div class="panel panel-success">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <a href="http://127.0.0.1:8000/FMS/{{user.user_profile.slug}}">{{ user.user_profile.user.first_name }} {{user.user_profile.user.last_name }}</a>
+                        <a href="http://127.0.0.1:8000/{{user.user_profile.slug}}">{{ user.user_profile.user.first_name }} {{user.user_profile.user.last_name }}</a>
 
                     </h3>
                 </div>

@@ -32,14 +32,11 @@
                 <div class="navbar-collapse collapse srch-box">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{% url 'index' %}">Home</a></li>
-                        {% if user.is_authenticated %}
+
                         <li><a href="{% url 'advanced_student_search_form' %}">Advanced Search</a></li>
                         <li><a href="{% url 'auth_logout' %}">Logout</a></li>
                         <li><a href="{% url 'my_profile' %}">My Profile</a></li>
-                        {% else %}
-                        <li><a href="{% url 'index' %}">Register Here</a></li>
-                        <li><a href="{% url 'index' %}">Login</a></li>
-                        {% endif %}
+
 
                     </ul>
                 </div>

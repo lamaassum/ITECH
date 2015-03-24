@@ -224,9 +224,12 @@ def profile_form(request):
         return HttpResponse("You are not logged in.")'''
 
 def issues_search(request, form_class=SearchForm, template_name='advanced_student_search_form.html'):
-    form = AdvancedStudentSearchForm()
-    context = {'searchform':form}
-    return render(request, 'FMS/advanced_student_search_form.html', context)
+    if request.user.is_authenticated():
+        form = AdvancedStudentSearchForm()
+        context = {'searchform':form}
+        return render(request, 'FMS/advanced_student_search_form.html', context)
+    else:
+        return HttpResponse("You are not logged in.")
 
 def advanced_search(request): #, major, advisor, description, topics
     print "ASDASD"
@@ -357,142 +360,14 @@ def advanced_search(request): #, major, advisor, description, topics
 # views.py
 def search(request):
     user = request.user
-    output = ' '
-    if request.method == 'GET':
-        form = SearchForm(request.GET)
-        if form.is_valid():
-            string = form.cleaned_data['search']
-            terms = re.compile(r'[^\s",;.:]+').findall(string)
-            fields = ['name', 'id'] # your field names
-            query = None
-            for term in terms:
-                for field in fields:
-                    qry = Q(**{'%s__icontains' % field: term})
-                    if query is None:
-                        query = qry
-                    else:
-                        query = query | qry
-            found_entries = Topic.objects.filter(query).order_by('-name') # your model
-            outputHTML =['']
-            print len(found_entries)
-            if len(found_entries) > 0:
-                outputList = {}
-                i=0
-
-                mail = str(user.email).lower()
-                if mail.find('student') != -1:
-                    for entry in found_entries:
-                        if i == 0:
-                            returned_users = Supervisor.objects.filter(user_profile__topic_choices=entry)
-                            found_users = returned_users
-                            es_count = [len(found_users)]
-                            print es_count[i]
-
-                        else:
-                            returned_users = Supervisor.objects.filter(user_profile__topic_choices=entry)
-                            found_users = found_users | returned_users
-                            es_count.append(len(returned_users))
-                            print es_count[i]
-                        print entry
-                        if es_count[i] != 0:
-                            outputHTML.append('<div class="jumbotron"> <h2>'+str(entry)+'</h2> \n')
-                            for x in returned_users:
-                                outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/FMS/' + str(x.user_profile.slug) +'"> '
-                                                  + str(x.user_profile.user.first_name) + ' ' + str(x.user_profile.user.last_name) + '</h3> </div><div class="panel-body"> ' #HEADER
-                                                  )
-                                outputHTML.append('  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" '+str(settings.MEDIA_URL) + "profile_images/avatar.jpg" +' "/></div></a>')
-                                outputHTML.append('<dl>')
-                                try:
-                                    if str(x.user_profile.user.email) != '':
-                                        outputHTML.append('<dt>' + str(x.user_profile.user.email) + '</dt>')
-                                except:
-                                    print 'email not supplied'
-                                try:
-                                    if str(x.user_profile.website) != '':
-                                        outputHTML.append('<dt>' +str(x.user_profile.website) + '</dt>')
-                                except:
-                                    print 'website not supplied'
-                                try:
-                                    z=0
-                                    length = len(x.user_profile.topic_choices.all())
-                                    for each in x.user_profile.topic_choices.all():
-                                        outputHTML.append('<dt>')
-                                        if z != length-1:
-                                            outputHTML.append(each.name + ', ')
-                                        else:
-                                            outputHTML.append(each.name + '</dt>')
-                                        z+= 1
-                                except:
-                                    print 'topics not supplied'
-                                try:
-                                    if str(x.user_profile.about_me) != '':
-                                        outputHTML.append(str(x.user_profile.about_me))
-                                except:
-                                    print 'about me not supplied'
-                                outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
-                            outputHTML.append('</div>')
-                            i= i+1
-                            output = ''.join(outputHTML)
-
-                else:
-                    for entry in found_entries:
-                        if i == 0:
-                            returned_users = Student.objects.filter(user_profile__topic_choices=entry)
-                            found_users = returned_users
-                            es_count = [len(found_users)]
-                            print es_count[i]
-
-                        else:
-                            returned_users = Student.objects.filter(user_profile__topic_choices=entry)
-                            found_users = found_users | returned_users
-                            es_count.append(len(returned_users))
-                            print es_count[i]
-                        print entry
-                        if es_count[i] != 0:
-                            outputHTML.append('<div class="jumbotron"> <h2>'+str(entry)+'</h2> \n')
-                            for x in returned_users:
-                                outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/FMS/' + str(x.user_profile.slug) +'"> '
-                                                  + str(x.user_profile.user.first_name) + ' ' + str(x.user_profile.user.last_name) + '</h3> </div><div class="panel-body"> ' #HEADER
-                                                  )
-                                outputHTML.append('  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" '+str(settings.MEDIA_URL) + "profile_images/avatar.jpg" +' "/></div></a>')
-                                outputHTML.append('<dl>')
-                                try:
-                                    if str(x.user_profile.email) != '':
-                                        outputHTML.append('<dt>' + str(x.user_profile.user.email) + '</dt>')
-                                except:
-                                    print 'email not supplied'
-                                try:
-                                    if str(x.user_profile.website) != '':
-                                        outputHTML.append('<dt>' +str(x.user_profile.website) + '</dt>')
-                                except:
-                                    print 'website not supplied'
-                                try:
-                                    z=0
-                                    length = len(x.user_profile.topic_choices.all())
-                                    for each in x.user_profile.topic_choices.all():
-                                        outputHTML.append('<dt>')
-                                        if z != length-1:
-                                            outputHTML.append(each.name + ', ')
-                                        else:
-                                            outputHTML.append(each.name + '</dt>')
-                                        z+= 1
-                                except:
-                                    print 'topics not supplied'
-                                try:
-                                    if str(x.user_profile.about_me) != '':
-                                        outputHTML.append(str(x.user_profile.about_me))
-                                except:
-                                    print 'about me not supplied'
-
-                                outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
-                            outputHTML.append('</div>')
-                            i= i+1
-                            output = ''.join(outputHTML)
-                print output
-                return render(request, 'FMS/search.html', {'found_entries':found_entries, 'outputHTML':output })
-            else:
-                print "OI"
-                fields = ['first_name', 'last_name'] # your field names
+    if user.is_authenticated():
+        output = ' '
+        if request.method == 'GET':
+            form = SearchForm(request.GET)
+            if form.is_valid():
+                string = form.cleaned_data['search']
+                terms = re.compile(r'[^\s",;.:]+').findall(string)
+                fields = ['name', 'id'] # your field names
                 query = None
                 for term in terms:
                     for field in fields:
@@ -501,82 +376,212 @@ def search(request):
                             query = qry
                         else:
                             query = query | qry
-                returned_users = User.objects.filter(query)
+                found_entries = Topic.objects.filter(query).order_by('-name') # your model
+                outputHTML =['']
+                print len(found_entries)
+                if len(found_entries) > 0:
+                    outputList = {}
+                    i=0
 
-                mail = str(user.email).lower()
-                if (mail.find('student')):
-                    heading = 'Supervisors'
+                    mail = str(user.email).lower()
+                    if mail.find('student') != -1:
+                        for entry in found_entries:
+                            if i == 0:
+                                returned_users = Supervisor.objects.filter(user_profile__topic_choices=entry)
+                                found_users = returned_users
+                                es_count = [len(found_users)]
+                                print es_count[i]
+
+                            else:
+                                returned_users = Supervisor.objects.filter(user_profile__topic_choices=entry)
+                                found_users = found_users | returned_users
+                                es_count.append(len(returned_users))
+                                print es_count[i]
+                            print entry
+                            if es_count[i] != 0:
+                                outputHTML.append('<div class="jumbotron"> <h2>'+str(entry)+'</h2> \n')
+                                for x in returned_users:
+                                    outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/' + str(x.user_profile.slug) +'"> '
+                                                      + str(x.user_profile.user.first_name) + ' ' + str(x.user_profile.user.last_name) + '</h3> </div><div class="panel-body"> ' #HEADER
+                                                      )
+                                    outputHTML.append('  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" '+str(settings.MEDIA_URL) + "profile_images/avatar.jpg" +' "/></div></a>')
+                                    outputHTML.append('<dl>')
+                                    try:
+                                        if str(x.user_profile.user.email) != '':
+                                            outputHTML.append('<dt>' + str(x.user_profile.user.email) + '</dt>')
+                                    except:
+                                        print 'email not supplied'
+                                    try:
+                                        if str(x.user_profile.website) != '':
+                                            outputHTML.append('<dt>' +str(x.user_profile.website) + '</dt>')
+                                    except:
+                                        print 'website not supplied'
+                                    try:
+                                        z=0
+                                        length = len(x.user_profile.topic_choices.all())
+                                        for each in x.user_profile.topic_choices.all():
+                                            outputHTML.append('<dt>')
+                                            if z != length-1:
+                                                outputHTML.append(each.name + ', ')
+                                            else:
+                                                outputHTML.append(each.name + '</dt>')
+                                            z+= 1
+                                    except:
+                                        print 'topics not supplied'
+                                    try:
+                                        if str(x.user_profile.about_me) != '':
+                                            outputHTML.append(str(x.user_profile.about_me))
+                                    except:
+                                        print 'about me not supplied'
+                                    outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
+                                outputHTML.append('</div>')
+                                i= i+1
+                                output = ''.join(outputHTML)
+
+                    else:
+                        for entry in found_entries:
+                            if i == 0:
+                                returned_users = Student.objects.filter(user_profile__topic_choices=entry)
+                                found_users = returned_users
+                                es_count = [len(found_users)]
+                                print es_count[i]
+
+                            else:
+                                returned_users = Student.objects.filter(user_profile__topic_choices=entry)
+                                found_users = found_users | returned_users
+                                es_count.append(len(returned_users))
+                                print es_count[i]
+                            print entry
+                            if es_count[i] != 0:
+                                outputHTML.append('<div class="jumbotron"> <h2>'+str(entry)+'</h2> \n')
+                                for x in returned_users:
+                                    outputHTML.append(' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/' + str(x.user_profile.slug) +'"> '
+                                                      + str(x.user_profile.user.first_name) + ' ' + str(x.user_profile.user.last_name) + '</h3> </div><div class="panel-body"> ' #HEADER
+                                                      )
+                                    outputHTML.append('  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" '+str(settings.MEDIA_URL) + "profile_images/avatar.jpg" +' "/></div></a>')
+                                    outputHTML.append('<dl>')
+                                    try:
+                                        if str(x.user_profile.email) != '':
+                                            outputHTML.append('<dt>' + str(x.user_profile.user.email) + '</dt>')
+                                    except:
+                                        print 'email not supplied'
+                                    try:
+                                        if str(x.user_profile.website) != '':
+                                            outputHTML.append('<dt>' +str(x.user_profile.website) + '</dt>')
+                                    except:
+                                        print 'website not supplied'
+                                    try:
+                                        z=0
+                                        length = len(x.user_profile.topic_choices.all())
+                                        for each in x.user_profile.topic_choices.all():
+                                            outputHTML.append('<dt>')
+                                            if z != length-1:
+                                                outputHTML.append(each.name + ', ')
+                                            else:
+                                                outputHTML.append(each.name + '</dt>')
+                                            z+= 1
+                                    except:
+                                        print 'topics not supplied'
+                                    try:
+                                        if str(x.user_profile.about_me) != '':
+                                            outputHTML.append(str(x.user_profile.about_me))
+                                    except:
+                                        print 'about me not supplied'
+
+                                    outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
+                                outputHTML.append('</div>')
+                                i= i+1
+                                output = ''.join(outputHTML)
+                    print output
+                    return render(request, 'FMS/search.html', {'found_entries':found_entries, 'outputHTML':output })
                 else:
-                    heading = 'Students'
-                outputHTML.append('<div class="jumbotron"> <h2> '+ heading + ' </h2> \n')
-                for x in returned_users:
-                    profile = UserProfile.objects.filter(user=x)[0]
-                    isStaff = True
+                    print "OI"
+                    fields = ['first_name', 'last_name'] # your field names
+                    query = None
+                    for term in terms:
+                        for field in fields:
+                            qry = Q(**{'%s__icontains' % field: term})
+                            if query is None:
+                                query = qry
+                            else:
+                                query = query | qry
+                    returned_users = User.objects.filter(query)
 
-                    try:
-                        userType = Supervisor.objects.filter(user_profile=profile)[0]
-                        userTypeString = userType.job_title
-                        print userType.job_title
-                    except:
-                        userType = Student.objects.filter(user_profile=profile)[0]
-                        isStaff = False
-                        userTypeString = 'Student'
+                    mail = str(user.email).lower()
+                    if (mail.find('student')):
+                        heading = 'Supervisors'
+                    else:
+                        heading = 'Students'
+                    outputHTML.append('<div class="jumbotron"> <h2> '+ heading + ' </h2> \n')
+                    for x in returned_users:
+                        profile = UserProfile.objects.filter(user=x)[0]
+                        isStaff = True
 
-                        print str(mail.find('student')) + ', ' + str(isStaff)
-                    if (mail.find('student') == -1) and  (isStaff == False):
-                        print "AUSIDBNAOSDI"
-                    if ((mail.find('student') == -1) and  (isStaff == False)) or ((mail.find('student') != -1) and  (isStaff == True)):
-                        print 'studentType'
-                        print "SLUG: " + str(profile.slug)
-                        outputHTML.append(
-                            ' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/FMS/' + str(profile.slug) +'"> '
-                            + str(x.first_name) + ' ' + str(x.last_name) + ' (' + userTypeString + ')' + '</h3> </div><div '
-                            'class="panel-body"> ' )
-                            # HEADER
+                        try:
+                            userType = Supervisor.objects.filter(user_profile=profile)[0]
+                            userTypeString = userType.job_title
+                            print userType.job_title
+                        except:
+                            userType = Student.objects.filter(user_profile=profile)[0]
+                            isStaff = False
+                            userTypeString = 'Student'
 
-                        outputHTML.append(
-                            '  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" ' + str(
-                                settings.MEDIA_URL) + "profile_images/avatar.jpg" + ' "/></div></a>')
-                        outputHTML.append('<dl>')
-                        try:
-                            if str(x.email) != '':
-                                outputHTML.append('<dt>' + str(x.email) + '</dt>')
-                        except:
-                            print 'email not supplied'
-                        try:
-                            if str(profile.website) != '':
-                                outputHTML.append('<dt>' + str(profile.website) + '</dt>')
-                        except:
-                            print 'website not supplied'
-                        try:
-                            z = 0
-                            length = len(profile.topic_choices.all())
-                            for each in profile.topic_choices.all():
-                                outputHTML.append('<dt>')
-                                if z != length - 1:
-                                    outputHTML.append(each.name + ', ')
-                                else:
-                                    outputHTML.append(each.name + '</dt>')
-                                z += 1
-                        except:
-                            print 'topics not supplied'
-                        try:
-                            if str(profile.about_me) != '':
-                                outputHTML.append(str(profile.about_me))
-                        except:
-                            print 'about me not supplied'
-                        outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
-                outputHTML.append('</div>')
+                            print str(mail.find('student')) + ', ' + str(isStaff)
+                        if (mail.find('student') == -1) and  (isStaff == False):
+                            print "AUSIDBNAOSDI"
+                        if ((mail.find('student') == -1) and  (isStaff == False)) or ((mail.find('student') != -1) and  (isStaff == True)):
+                            print 'studentType'
+                            print "SLUG: " + str(profile.slug)
+                            outputHTML.append(
+                                ' <div class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title"><a href="/' + str(profile.slug) +'"> '
+                                + str(x.first_name) + ' ' + str(x.last_name) + ' (' + userTypeString + ')' + '</h3> </div><div '
+                                'class="panel-body"> ' )
+                                # HEADER
 
-                output = ''.join(outputHTML)
-                print output
-                for each in returned_users:
-                    print each
-                return render(request, 'FMS/search.html', {'found_entries':returned_users, 'outputHTML':output })
+                            outputHTML.append(
+                                '  <a class="pull-left" href="#"> <div class="well well-sm"> <img class="media-object" src=" ' + str(
+                                    settings.MEDIA_URL) + "profile_images/avatar.jpg" + ' "/></div></a>')
+                            outputHTML.append('<dl>')
+                            try:
+                                if str(x.email) != '':
+                                    outputHTML.append('<dt>' + str(x.email) + '</dt>')
+                            except:
+                                print 'email not supplied'
+                            try:
+                                if str(profile.website) != '':
+                                    outputHTML.append('<dt>' + str(profile.website) + '</dt>')
+                            except:
+                                print 'website not supplied'
+                            try:
+                                z = 0
+                                length = len(profile.topic_choices.all())
+                                for each in profile.topic_choices.all():
+                                    outputHTML.append('<dt>')
+                                    if z != length - 1:
+                                        outputHTML.append(each.name + ', ')
+                                    else:
+                                        outputHTML.append(each.name + '</dt>')
+                                    z += 1
+                            except:
+                                print 'topics not supplied'
+                            try:
+                                if str(profile.about_me) != '':
+                                    outputHTML.append(str(profile.about_me))
+                            except:
+                                print 'about me not supplied'
+                            outputHTML.append('</dl></div><a href="#" class="btn btn-sm btn-success">Favourite <span class="glyphicon glyphicon-star-empty"></span></a></div>')
+                    outputHTML.append('</div>')
+
+                    output = ''.join(outputHTML)
+                    print output
+                    for each in returned_users:
+                        print each
+                    return render(request, 'FMS/search.html', {'found_entries':returned_users, 'outputHTML':output })
+        else:
+            form = SearchForm()
+            return render(request, 'FMS/search.html', {'form':form})
     else:
-        form = SearchForm()
-        return render(request, 'FMS/search.html', {'form':form})
-
+        return HttpResponse("You are not logged in.")
 
 '''#do we need separate view for edited version
 def project(request):
