@@ -1,51 +1,6 @@
-# Yi installed these stuff successfully
-BeautifulSoup==3.2.1
-Django==1.5.11
-Fabric==1.10.0
-GDAL==1.11.1
-List==1.3.0
-Pillow==2.6.0
-Shapely==1.4.4
-South==1.0
-Twisted==13.2.0
-altgraph==0.10.2
-amqp==1.4.6
-anyjson==0.3.3
-argparse==1.3.0
-bdist-mpkg==0.5.0
-billiard==3.3.0.19
-celery==3.1.17
-dj-database-url==0.3.0
-dj-static==0.0.6
-django-ajax-search==1.5.1
-django-registration-redux==1.1
-ecdsa==0.11
-haystack==0.15
-kombu==3.0.24
-macholib==1.5.1
-matplotlib==1.4.0
-mock==1.0.1
-modulegraph==0.10.4
-nose==1.3.0
-numpy==1.9.0
-paramiko==1.15.1
-pbr==0.10.7
-py2app==0.7.3
-pycrypto==2.6.1
-pyparsing==2.0.1
-python-dateutil==1.5
-python-ptrace==0.8.1
-pytz==2013.7
-requests==2.4.3
-six==1.9.0
-static3==0.5.1
-stevedore==1.2.0
-tinycss==0.3
-tornado==3.1.1
-virtualenv==12.0.5
-virtualenv-clone==0.2.5
-virtualenvwrapper==4.3.2
-whitenoise==1.0.6
-wsgiref==0.1.2
-xattr==0.6.4
-zope.interface==4.1.1
+1- requirement.txt is included to install needed packages
+2- After pulling the project and run the server, Go to: http://127.0.0.1:8000/accounts/login/
+3- To login as student(un:kriscamilleri, pw: 1234)
+4- To login as supervisor(un:leifazzopardi, pw: 1234)
+5- To login as administrator(un:lama, pw: 1234)
+(Note, all user accounts visible in admin have 1234 as their password)
