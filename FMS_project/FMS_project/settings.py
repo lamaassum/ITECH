@@ -115,3 +115,4 @@ EMAIL_USE_TLS = False
 DEFAULT_FROM_EMAIL = 'testing@example.com'
 
 SITE_ID = 1
+

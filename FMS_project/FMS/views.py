@@ -63,9 +63,15 @@ def profile_form(request):
             else:
                 details_form = StudentForm(request.POST, prefix="details")
 
-            #if user_form.is_valid() and user_profile_form.is_valid() and details_form.is_valid():
-
-
+            if user_form.is_valid() and user_profile_form.is_valid() and details_form.is_valid():
+                user_form.save(commit=True)
+                user_profile_form.save(commit=True)
+                details_form.save(commit=True)
+                return render(request, 'FMS/index.html')
+            else:
+                print user_form.errors
+                print user_profile_form.errors
+                print details_form.errors
 
         context_dict = {'user_form':user_form, 'user_profile_form': user_profile_form, 'details_form': details_form}
         return render(request, 'FMS/profile_form.html',context_dict)
