@@ -26,7 +26,7 @@
     <div class="col-sm-8 col-md-8  main">
         <div class="row">
             <div class="col-md-1 col-xs-12">
-                <a class="navbar-brand" rel="home" href="/FMS/"> <img style=" margin-top: -7px; " src='{% static "images/logo.png" %}'></a>
+                <a class="navbar-brand" rel="home" href="/"> <img style=" margin-top: -7px; " src='{% static "images/logo.png" %}'></a>
             </div>
             <div class="col-md-8 col-xs-12">
                 <div class="navbar-collapse collapse srch-box">
@@ -34,13 +34,13 @@
                         <li><a href="{% url 'index' %}">Home</a></li>
                         {% if user.is_authenticated %}
                         <li><a href="{% url 'advanced_student_search_form' %}">Advanced Search</a></li>
-                        <li><a href="http://127.0.0.1:8000/accounts/logout/">Logout</a></li>
+                        <li><a href="{% url 'auth_logout' %}">Logout</a></li>
                         <li><a href="{% url 'my_profile' %}">My Profile</a></li>
                         {% else %}
                         <li><a href="{% url 'index' %}">Register Here</a></li>
                         <li><a href="{% url 'index' %}">Login</a></li>
                         {% endif %}
-                        
+
                     </ul>
                 </div>
             </div>
