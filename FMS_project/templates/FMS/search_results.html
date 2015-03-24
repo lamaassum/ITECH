@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Index{% endblock %}
+
+{% block body_block %}
+{% if user.is_authenticated %}
+
+</div>
+
+    <div class="jumbotron"> <h2>Results</h2>
+        {% if user.userprofile.supervisor.job_title %}
+            <h2> Students sharing my interests</h2>
+        {% else %}
+            <h2> Supervisors sharing my interests</h2>
+        {% endif %}
+
+        {% if found_users %}
+        <div>
+            {% for user in found_users %}
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a href="{{user.user_profile.slug}}">{{ user.user_profile.user.first_name }} {{user.user_profile.user.last_name }}</a>
+
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    {% if user.job_title %}
+                    <h4> {{user.job_title }}</h4>
+                    {% endif %}
+                    {% if user.major %}
+                    <h4> {{user.degree}}, {{user.major}}</h4>
+                    {% endif %}
+                    {% for t in user.user_profile.topic_choices.all %}
+
+                        {% if forloop.last %}
+                            {{ t.name }}.
+                        {% else %}
+                            {{ t.name }},
+                        {% endif %}
+                        {% endfor %}
+
+
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <strong>There are no users present.</strong>
+        {% endif %}
+
+
+</div>
+    {% else %}
+    <h1>Not Logged In</h1>
+    {% endif %}
+{% endblock %}

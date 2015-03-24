@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><h3>Enter as many filters as you'd like and hit search</h3></h3>
+    </div>
+
+    <div class="panel-body">
+        <form name=searchform role="search" method="GET" action="{% url 'advanced_search' %}">
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name"
+                               type="text">
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name"
+                               type="text">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input name="description" id="description" class="form-control input-sm"
+                               placeholder="Description" type="text">
+                    </div>
+                </div>
+{% if user.userprofile.supervisor.job_title %}
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input name="degree" id="degree" class="form-control input-sm" placeholder="Degree Level"
+                               type="text">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input name="major" id="major" class="form-control input-sm" placeholder="Major" type="text">
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input name="advisor" id="advisor" class="form-control input-sm" placeholder="Advisor"
+                               type="text">
+                    </div>
+                </div>
+            </div>
+
+                 {% else %}
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input name="job_title" id="job_title" class="form-control input-sm" placeholder="Job Title" type="text">
+                    </div>
+                </div>
+            </div>
+
+            {% endif %}
+                        <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input name="topic" id="topic" class="form-control input-sm" placeholder="Topic" type="text">
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input name="operand" id="operand" checked="" data-switch-no-init="" type="checkbox"> Toggle for OR, Disable for AND
+                    </div>
+                </div>
+            </div>
+            <input value="Advanced Search" class="btn btn-info btn-block" type="submit">
+
+        </form>
+    </div>
+</div>
+{% endblock %}

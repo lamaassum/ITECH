@@ -37,7 +37,7 @@ class StudentForm(forms.ModelForm):
     class Meta:
 		model = Student
 		fields = ('degree', 'major', 'advisor', 'advisor_email')
-		
+
 class ProjectForm(forms.ModelForm):
 	class Meta:
 		model = Project
@@ -46,3 +46,14 @@ class ProjectForm(forms.ModelForm):
 class SearchForm(forms.Form):
     search = forms.CharField()
 
+class AdvancedStudentSearchForm(forms.Form):
+    first_name = forms.CharField(max_length=30,required=False)
+    last_name = forms.CharField(max_length=30, required=False)
+    major = forms.CharField(max_length=30,required=False)
+    description = forms.CharField(max_length=30,required=False)
+    advisor = forms.CharField(max_length=30,required=False)
+    degree = forms.CharField(max_length=30,required=False)
+    job_title = forms.CharField(max_length=30,required=False)
+    topic = forms.BooleanField(required=False)
+    def clean(self):
+        return self

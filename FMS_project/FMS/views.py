@@ -3,23 +3,45 @@ import re
 from django.shortcuts import render
 from django.http import HttpResponse
 from FMS_project import settings
-from models import User, UserProfile, Supervisor, Student, Topic
+from models import User, UserProfile, Supervisor, Student, Topic, Project
 from forms import UserForm, UserProfileForm, StudentForm, SupervisorForm
 
-from forms import SearchForm
+from forms import SearchForm, AdvancedStudentSearchForm
 
 def index(request):
 
+    user = request.user
     if request.user.is_authenticated():
-        # Construct a dictionary to pass to the template engine as its context.
-        # Note the key boldmessage is the same as {{ boldmessage }} in the template!
-        #context_dict = {'boldmessage': "Hello World!"}
+        isStaff = True
+        if str((user.email).lower()).find('student') > -1:
+            isStaff = False
+        print isStaff
+        if isStaff == False:
+            users = Supervisor.objects.all()
+        else:
+            users = Student.objects.all()
 
-        # Return a rendered response to send to the client.
-        # We make use of the shortcut function to make our lives easier.
-        # Note that the first parameter is the template we wish to use.
-
-        return render(request, 'FMS/index.html')
+        userObj = User.objects.get(username=user.username)
+        profile = UserProfile.objects.filter(user=userObj)[0]
+        projects = Project.objects.all()
+        projectList = []
+        topic_choices =  profile.topic_choices.all()
+        for each in topic_choices:
+            print "TOPIC : " + str(each)
+            project_topics = Project.objects.filter(project_topic=each)
+            for j in project_topics:
+                if str(projectList).find(str(j)) == -1:
+                 projectList.append(j)
+        a = 0
+        projects = Project.objects.none()
+        while a < len(projectList):
+            print str(a) + ": " + str(projectList[a])
+            projects = Project.objects.filter(title=str(projectList[a])) | projects
+            a+=1
+        projectOutput = ''.join(str(projectList))
+        print projectOutput
+        projectList = Project.objects.none()
+        return render(request, 'FMS/index.html', {'projects':projects[:10], 'users':users[:10]})
     else:
         return HttpResponse("You are not logged in.")
 
@@ -110,6 +132,135 @@ def profile(request, user_name_slug):
             profile = UserProfile.objects.filter(user=user)
     else:
         return HttpResponse("You are not logged in.")'''
+
+def issues_search(request, form_class=SearchForm, template_name='advanced_student_search_form.html'):
+    form = AdvancedStudentSearchForm()
+    context = {'searchform':form}
+    return render(request, 'FMS/advanced_student_search_form.html', context)
+
+def advanced_search(request): #, major, advisor, description, topics
+    print "ASDASD"
+    user = request.user
+    if request.user.is_authenticated():
+        isStaff = True
+        if str((user.email).lower()).find('student') > -1:
+            isStaff = False
+        print isStaff
+        if isStaff == False:
+            users = Supervisor.objects.all()
+        else:
+            users = Student.objects.all()
+
+        userObj = User.objects.get(username=user.username)
+        profile = UserProfile.objects.filter(user=userObj)[0]
+    search_results = []
+    form = AdvancedStudentSearchForm(request.GET)
+    if request.method == 'GET':
+        first_name = request.GET.get('first_name')
+        last_name = request.GET.get('last_name')
+        description = request.GET.get('description')
+        topic = request.GET.get('topic')
+        operand = request.GET.get('operand')
+
+        terms = []
+        fields = []
+        if (first_name != ''):
+            if (first_name != None):
+                terms.append(str(first_name))
+                fields.append('user_profile__user__first_name')
+        if last_name != '' :
+            if last_name != None:
+                terms.append(str(last_name))
+                fields.append('user_profile__user__last_name')
+        if description != '' :
+                if description != None:
+                    terms.append(str(description))
+                    fields.append('user_profile__about_me')
+
+        if isStaff:
+            major = request.GET.get('major')
+            advisor = request.GET.get('advisor')
+            degree = request.GET.get('degree')
+            if major != '':
+                if major != None:
+                    terms.append(str(major))
+                    fields.append('major')
+            if (advisor != '') :
+                if (advisor != None):
+                    terms.append(str(advisor))
+                    fields.append('advisor')
+
+            if degree != '' :
+                if degree != None:
+                    terms.append(str(degree))
+                    fields.append('degree')
+        else:
+            job_title = request.GET.get('job_title')
+            if job_title != '':
+                if job_title != None:
+                    terms.append(str(job_title))
+                    fields.append('job_title')
+            print fields
+        print "FIRST NAME: " + str(first_name)
+        if form.is_valid():                                #bind data to dict keys
+
+            query = None
+            i = 0
+            while i < len(terms):
+                qry = Q(**{'%s__icontains' % fields[i]: terms[i]})
+                if query is None:
+                    query = qry
+                else:
+                    if operand == 'on':
+                        query = query | qry
+                    else:
+                        query = query & qry
+
+
+                i+=1
+            print query
+            if query != '' :
+                if query != None:
+                    found_entries = users.filter(query) # your model
+            found_users = ''
+
+            found_topics = ''
+            x=0
+            if topic != '' :
+                if topic != None:
+                    terms = re.compile(r'[^\s",;.:]+').findall(topic)
+                    for term in terms:
+                        field = 'name'
+
+                        qry = Q(**{'%s__icontains' % field: term})
+                        found_topics = Topic.objects.filter(qry) # your model
+                        print qry
+                        for entry in found_topics:
+                            if x == 0:
+                                try:
+                                    found_entries = found_entries.filter(user_profile__topic_choices=entry)
+                                except:
+                                    found_entries = users.filter(user_profile__topic_choices=entry)
+
+                                found_users = found_entries
+
+                            else:
+                                try:
+                                    found_entries = found_entries.filter(user_profile__topic_choices=entry)
+                                except:
+                                    found_entries = users.filter(user_profile__topic_choices=entry)
+                                found_users = found_users | found_entries
+                            x= x+1
+                            print entry
+            if found_users == '':
+                found_users = found_entries
+
+
+
+        print "RESULTS:" +str(found_topics)+str(found_users)
+        return render(request, 'FMS/search_results.html', {'found_users':found_users[:50]})
+    else:
+        return HttpResponse("You are not logged in.")
 
 
 
