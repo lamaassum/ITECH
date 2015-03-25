@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login',{"template_name" : "registration/login.html",},name="login"),
     url(r'^logout/$', 'django.contrib.auth.views.logout',{"template_name" : "registration/logout.html",},name="logout"),
     url(r'^$', views.index, name='index'),
+    url(r'^search/$', views.search, name='search_for_something'),
     url(r'^advanced_search/$', views.issues_search, name='advanced_student_search_form'),
     url(r'^results/$', views.advanced_search, name='advanced_search'),
     url(r'^my_profile/$', views.my_profile, name='my_profile'),
@@ -18,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^about/', views.about, name='about'),
     (r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^/$', views.search, name='search_for_something'),
+
     url(r'^(?P<user_name_slug>[\w\-]+)/$', views.profile, name='profile'),
     )
     

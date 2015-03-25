@@ -376,8 +376,7 @@ def search(request):
         output = ' '
         if request.method == 'GET':
             print request.GET.get('search', None)
-            if  'q' in request.GET:
-
+            if  True:
                 form = SearchForm(request.GET)
                 if form.is_valid():
                     string = form.cleaned_data['search']
