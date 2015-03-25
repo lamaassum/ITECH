@@ -8,17 +8,20 @@
 
 {% block body_block %}
 {% if user.is_authenticated %}
-
+<div class="col-sm-2 col-md-2 main">
 </div>
+<div class="col-sm-8 col-md-8 main">
 
-    <div class="jumbotron"> <h2>Results</h2>
-        {% if user.userprofile.supervisor.job_title %}
-            <h2> Students sharing my interests</h2>
-        {% else %}
-            <h2> Supervisors sharing my interests</h2>
-        {% endif %}
+
+    <div class="jumbotron"> <center><h2>Results</h2></center>
 
         {% if found_users %}
+        {% if user.userprofile.supervisor.job_title %}
+            <h3> Students sharing my interests</h3></center>
+        {% else %}
+            <center><h3> Supervisors sharing my interests</h3></center>
+        {% endif %}
+
         <div>
             {% for user in found_users %}
             <div class="panel panel-success">
@@ -51,10 +54,10 @@
             {% endfor %}
         </div>
         {% else %}
-        <strong>There are no users present.</strong>
+        <center><strong>There are no users present.</strong></center>
         {% endif %}
 
-
+</div>
 </div>
     {% else %}
     <h1>Not Logged In</h1>

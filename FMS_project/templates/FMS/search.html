@@ -12,7 +12,9 @@
 <div class="col-sm-8 col-md-8 main">
 {% if found_entries %}
 {% autoescape off %}{{ outputHTML }}{% endautoescape %}
-{% endif %}
+{% else %}
+        <center><strong>There are no users present.</strong></center>
+        {% endif %}
 </div>
 <div class="col-sm-2 col-md-2">
 </div>
