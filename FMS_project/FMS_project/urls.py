@@ -7,6 +7,8 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'FMS_project.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
+    url(r'^login/$', 'django.contrib.auth.views.login',{"template_name" : "registration/login.html",},name="login"),
+    url(r'^logout/$', 'django.contrib.auth.views.logout',{"template_name" : "registration/logout.html",},name="logout"),
     url(r'^$', views.index, name='index'),
     url(r'^advanced_search/$', views.issues_search, name='advanced_student_search_form'),
     url(r'^results/$', views.advanced_search, name='advanced_search'),

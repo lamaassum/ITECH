@@ -1,7 +1,8 @@
+from django.core.urlresolvers import reverse
 from django.db.models import Q
 import re
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, render_to_response
+from django.http import HttpResponse, HttpResponseRedirect
 from FMS_project import settings
 from models import User, UserProfile, Supervisor, Student, Topic, Project
 from forms import UserForm, UserProfileForm, StudentForm, SupervisorForm
@@ -43,7 +44,7 @@ def index(request):
         projectList = Project.objects.none()
         return render(request, 'FMS/index.html', {'projects':projects[:10], 'users':users[:10]})
     else:
-        return HttpResponse("You are not logged in.")
+        return HttpResponseRedirect(reverse('login'))
 
 #do we need separate view for edited version
 def my_profile(request):
@@ -62,7 +63,7 @@ def my_profile(request):
         context_dict = {'user': userObj, 'profile': profile, 'topics': topics, 'details': details, 'is_supervisor': is_supervisor, 'is_mine': True}
         return render(request, 'FMS/profile.html', context_dict)
     else:
-        return HttpResponse("You are not logged in.")
+        return HttpResponseRedirect(reverse('login'))
 
 def profile_form(request):
 
@@ -99,7 +100,7 @@ def profile_form(request):
         return render(request, 'FMS/profile_form.html',context_dict)
 
     else:
-        return HttpResponse("You are not logged in.")
+                return HttpResponseRedirect(reverse('login'))
 
 
 #profile page
@@ -213,7 +214,7 @@ def profile_form(request):
         return render(request, 'FMS/profile_form.html',context_dict)
 
     else:
-        return HttpResponse("You are not logged in.")
+                return HttpResponseRedirect(reverse('login'))
 
 '''def favorite_supervisor(request):
     if request.user.is_authenticated():
@@ -221,7 +222,7 @@ def profile_form(request):
         if not user.email.find('student') == -1:
             profile = UserProfile.objects.filter(user=user)
     else:
-        return HttpResponse("You are not logged in.")'''
+                return HttpResponseRedirect(reverse('login')) '''
 
 def issues_search(request, form_class=SearchForm, template_name='advanced_student_search_form.html'):
     if request.user.is_authenticated():
@@ -229,7 +230,7 @@ def issues_search(request, form_class=SearchForm, template_name='advanced_studen
         context = {'searchform':form}
         return render(request, 'FMS/advanced_student_search_form.html', context)
     else:
-        return HttpResponse("You are not logged in.")
+        return HttpResponseRedirect(reverse('login'))
 
 def advanced_search(request): #, major, advisor, description, topics
     print "ASDASD"
@@ -353,7 +354,7 @@ def advanced_search(request): #, major, advisor, description, topics
         print "RESULTS:" +str(found_topics)+str(found_users)
         return render(request, 'FMS/search_results.html', {'found_users':found_users[:50]})
     else:
-        return HttpResponse("You are not logged in.")
+                return HttpResponseRedirect(reverse('login'))
 
 
 
@@ -581,7 +582,7 @@ def search(request):
             form = SearchForm()
             return render(request, 'FMS/search.html', {'form':form})
     else:
-        return HttpResponse("You are not logged in.")
+                return HttpResponseRedirect(reverse('login'))
 
 '''#do we need separate view for edited version
 def project(request):
@@ -598,4 +599,4 @@ def favorite_supervisor(request):
         return render(request, 'FMS/search_results.html', {'found_users':list})
 
     else:
-        return HttpResponse("You are not logged in.")
+                return HttpResponseRedirect(reverse('login'))
