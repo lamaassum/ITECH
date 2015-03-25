@@ -46,6 +46,16 @@ def index(request):
     else:
         return HttpResponseRedirect(reverse('login'))
 
+
+def about(request):
+     user = request.user
+     if user.is_authenticated():
+        return render(request, 'FMS/about.html')
+     else:
+         return HttpResponseRedirect(reverse('login'))
+
+
+
 #do we need separate view for edited version
 def my_profile(request):
     if request.user.is_authenticated():
@@ -355,8 +365,6 @@ def advanced_search(request): #, major, advisor, description, topics
         return render(request, 'FMS/search_results.html', {'found_users':found_users[:50]})
     else:
                 return HttpResponseRedirect(reverse('login'))
-
-
 
 # views.py
 def search(request):
