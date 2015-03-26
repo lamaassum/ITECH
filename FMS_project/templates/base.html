@@ -41,7 +41,7 @@
     <div class="col-sm-8 col-md-8  main">
         <div class="row">
             <div class="col-md-1 col-xs-12">
-                <a class="navbar-brand" rel="home" href="/FMS/"> <img style=" margin-top: -7px; " src='{% static "images/logo.png" %}'></a>
+                <a class="navbar-brand" rel="home" href="/FMS/"> <img style=" margin-top: -7px; " src='http://leif.pythonanywhere.com/media/2015/03/24/unnamed.png'></a>
             </div>
             <div class="col-md-8 col-xs-12">
                 <div class="navbar-collapse collapse srch-box">
@@ -65,7 +65,6 @@
                 <div class="pull-right srch-box" role="search">
                     <form class="navbar-form" role="search" method="GET" action="{% url 'search_for_something' %}">
                         <div class="input-group">
-                                <!--{% csrf_token %} -->
                                 {{ form.search }}
                             <div class="input-group-btn">
                             <input type="text" class="form-control" placeholder="Search" name="search" id="search">
