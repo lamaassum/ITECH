@@ -11,8 +11,13 @@ from forms import SearchForm, AdvancedStudentSearchForm
 
 def index(request):
 
+
     user = request.user
     if request.user.is_authenticated():
+
+        if not request.user.first_name:
+            return HttpResponseRedirect(reverse('profile_form'))
+
         isStaff = True
         if str((user.email).lower()).find('student') > -1:
             isStaff = False
@@ -75,7 +80,7 @@ def my_profile(request):
     else:
         return HttpResponseRedirect(reverse('login'))
 
-def profile_form(request):
+'''def profile_form(request):
 
     if request.user.is_authenticated():
 
@@ -110,7 +115,7 @@ def profile_form(request):
         return render(request, 'FMS/profile_form.html',context_dict)
 
     else:
-                return HttpResponseRedirect(reverse('login'))
+                return HttpResponseRedirect(reverse('login'))'''
 
 
 #profile page
@@ -143,14 +148,14 @@ def profile_form(request):
 
         user = request.user
         userObj = User.objects.get(username=user.username)
-        profile = UserProfile.objects.filter(user=userObj)[0]
+        profile = UserProfile.objects.get_or_create(user=userObj)[0]
 
 
         if not userObj.email.find('student') == -1:
-            details = Student.objects.filter(user_profile=profile)[0]
+            details = Student.objects.get_or_create(user_profile=profile)[0]
 
         else:
-            details = Supervisor.objects.filter(user_profile=profile)[0]
+            details = Supervisor.objects.get_or_create(user_profile=profile)[0]
 
 
 
@@ -174,54 +179,56 @@ def profile_form(request):
                 profile.user = userObj
                 profile.about_me = request.POST.get('about_me')
                 profile.website = request.POST.get('website')
-                profile.schoolID = request.POST.get('schoolID')
-                profile.picture = request.POST.get('image_name')
+                #profile.schoolID = request.POST.get('schoolID')
+                #profile.picture = request.POST.get('image_name')
                 profile.topic_choices = request.POST.getlist('topic_choices')
                 profile.save()
 
                 if userObj.email.find('student') == -1:
+                    details.user_profile = profile
                     details.job_title = request.POST.get('job_title')
-                    details.profile = profile
                     if(request.POST.get('availability')):
                         details.availability = True;
                     else:
                         details.availability = False;
                 else:
+                    details.user_profile = profile
                     details.degree = request.POST.get('degree')
                     details.major = request.POST.get('major')
                     details.advisor = request.POST.get('advisor')
                     details.advisor_email = request.POST.get('advisor_email')
                 details.save()
 
-                context_dict = {'user': userObj, 'profile': profile, 'topics': profile.topic_choices.all, 'details': details, 'is_mine': True}
-                return render(request, 'FMS/profile.html',context_dict)
+                #context_dict = {'user': userObj, 'profile': profile, 'topics': profile.topic_choices.all, 'details': details, 'is_mine': True}
+                #return render(request, 'FMS/profile.html',context_dict)
+                return HttpResponseRedirect(reverse('my_profile'))
             '''else:
                 print user_form.errors
                 print user_profile_form.errors
                 print details_form.errors'''
-
-        user_form = UserForm({'first_name':userObj.first_name, 'last_name': userObj.last_name, 'email': userObj.email})
-        '''UserForm.first_name = userObj.first_name
-        user_form.last_name = userObj.last_name
-        user_form.email = userObj.email'''
-
-        user_profile_form = UserProfileForm({'website': profile.website, 'school_ID': profile.school_ID, 'picture': profile.picture,
-        'about_me':profile.about_me, 'topic_choices':profile.topic_choices.all()})
-        '''user_profile_form.website =profile.website
-        #user_profile_form.schoolID =profile.schoolID
-        user_profile_form.picture =profile.picture
-        user_profile_form.about_me =profile.about_me
-        user_profile_form.topic_choices =profile.topic_choices'''
-
-        if not request.user.email.find('student') == -1:
-            details_form = StudentForm({'degree': details.degree, 'major': details.major, 'advisor': details.advisor, 'advisor_email': details.advisor_email})
-
         else:
-            details_form = SupervisorForm({'job_title':details.job_title, 'availability': details.availability})
+            user_form = UserForm({'first_name':userObj.first_name, 'last_name': userObj.last_name, 'email': userObj.email})
+            '''UserForm.first_name = userObj.first_name
+            user_form.last_name = userObj.last_name
+            user_form.email = userObj.email'''
+
+            user_profile_form = UserProfileForm({'website': profile.website, 'school_ID': profile.school_ID, #'picture': profile.picture,
+            'about_me':profile.about_me, 'topic_choices':profile.topic_choices.all()})
+            '''user_profile_form.website =profile.website
+            #user_profile_form.schoolID =profile.schoolID
+            user_profile_form.picture =profile.picture
+            user_profile_form.about_me =profile.about_me
+            user_profile_form.topic_choices =profile.topic_choices'''
+
+            if not request.user.email.find('student') == -1:
+                details_form = StudentForm({'degree': details.degree, 'major': details.major, 'advisor': details.advisor, 'advisor_email': details.advisor_email})
+
+            else:
+                details_form = SupervisorForm({'job_title':details.job_title, 'availability': details.availability})
 
 
-        context_dict = {'user_form':user_form, 'user_profile_form': user_profile_form, 'details_form': details_form}
-        return render(request, 'FMS/profile_form.html',context_dict)
+            context_dict = {'user_form':user_form, 'user_profile_form': user_profile_form, 'details_form': details_form}
+            return render(request, 'FMS/profile_form.html',context_dict)
 
     else:
                 return HttpResponseRedirect(reverse('login'))

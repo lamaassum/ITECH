@@ -17,7 +17,7 @@ class UserProfile (models.Model):
     about_me = models.TextField(max_length=500, blank=True)
     website = models.URLField(blank=True, null=True)
     picture =models.ImageField(upload_to='profile_images',blank=True)
-    school_ID = models.ForeignKey(School)
+    school_ID = models.ForeignKey(School, null=True)
     topic_choices = models.ManyToManyField(Topic)
     slug = models.SlugField(blank=True, unique=True)
 

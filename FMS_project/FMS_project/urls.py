@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^favorite_supervisor/$', views.favorite_supervisor, name='favorite_supervisor'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^about/', views.about, name='about'),
-    (r'^accounts/', include('registration.backends.default.urls')),
+    (r'^accounts/', include('registration.backends.simple.urls')),
 
     url(r'^(?P<user_name_slug>[\w\-]+)/$', views.profile, name='profile'),
     )

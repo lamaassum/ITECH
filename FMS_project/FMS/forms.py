@@ -2,9 +2,9 @@ from django import forms
 from models import User, UserProfile, Supervisor, Student, Project
 
 class UserForm(forms.ModelForm):
-    '''first_name = forms.CharField(max_length=30, required= True)
+    first_name = forms.CharField(max_length=30, required= True)
     last_name = forms.CharField(max_length=30, required= True)
-    email = forms.EmailField(max_length=254, required= True)'''
+    email = forms.EmailField(max_length=254, required= True)
 
     class Meta:
 		model = User
@@ -19,20 +19,20 @@ class UserProfileForm(forms.ModelForm):
     #topic_choices = forms.ModelMultipleChoiceField()'''
     class Meta:
 		model = UserProfile
-		fields = ('website', 'school_ID', 'picture', 'about_me', 'topic_choices')
+		fields = ('website', 'about_me', 'topic_choices')
 
 class SupervisorForm(forms.ModelForm):
-    '''job_title = forms.CharField(max_length=128, required=False)
-    availability = forms.BooleanField(required=False)'''
+    job_title = forms.CharField(max_length=128, required=True)
+    availability = forms.BooleanField(required=False)
     class Meta:
 		model = Supervisor
 		fields = ('job_title','availability')
 
 class StudentForm(forms.ModelForm):
-    '''degree= forms.CharField(max_length = 128, required=False)
-    major= forms.CharField(max_length = 128, required=False)
+    degree= forms.CharField(max_length = 128, required=True)
+    major= forms.CharField(max_length = 128, required=True)
     advisor= forms.CharField(max_length = 128, required=False)
-    advisor_email= forms.EmailField(max_length=254, required= False)'''
+    advisor_email= forms.EmailField(max_length=254, required= False)
 
     class Meta:
 		model = Student
