@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+ <link rel="stylesheet" href='{% static "css/bootswatch.min.css" %}'>
+{% endblock %}
+{% load staticfiles %}
+{% block title %}About{% endblock %}
+
+{% block body_block %}
+<div class="col-sm-4 col-md-4 main">
+</div>
+<div class="col-sm-4 col-md-4 main">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><center><h3>About the Project</h3></center></h3>
+    </div>
+
+    <div class="panel-body">
+                    <center>
+                    Find My Supervisor exists to address the difficulty in finding supervisors or mentors for research
+                    projects at the University of Glasgow. While best suited for pairing people intending to carry out
+                    self defined projects, the system allows for projects to be added by an administrators - should
+                    supervisors be inclined to do so. <br><br>
+
+                    The web application was conceived and developed by Lama Assum, Kris Camilleri, Yi Zhou, and Carol Stewart.
+                    This was carried out as part of the Internet Technologies module, lectured by Leif Azzopardi at the
+                    University of Glasgow in 2015.<br><br>
+
+                    The project is open source and further development is welcomed at
+                    <a href="https://github.com/lamaassum/ITECH/" >https://github.com/lamaassum/ITECH/</a>.
+                    </center>
+
+
+    </div>
+</div>
+</div>
+{% endblock %}
