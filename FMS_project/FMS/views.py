@@ -69,7 +69,7 @@ def my_profile(request):
         profile = UserProfile.objects.filter(user=userObj)[0]
         topics = profile.topic_choices.all()
 
-        if not userObj.email.find('student') == -1:
+        if str((user.email).lower()).find('student') > -1:
             details = Student.objects.filter(user_profile=profile)[0]
             is_supervisor = False
         else:
@@ -127,7 +127,7 @@ def profile(request, user_name_slug):
         topics = profile.topic_choices.all()
         user = profile.user
 
-        if not user.email.find('student') == -1:
+        if str((user.email).lower()).find('student') > -1:
             details = Student.objects.filter(user_profile=profile)[0]
             is_supervisor = False
         else:
@@ -151,7 +151,7 @@ def profile_form(request):
         profile = UserProfile.objects.get_or_create(user=userObj)[0]
 
 
-        if not userObj.email.find('student') == -1:
+        if str((user.email).lower()).find('student') > -1:
             details = Student.objects.get_or_create(user_profile=profile)[0]
 
         else:
@@ -162,7 +162,7 @@ def profile_form(request):
         if request.method == 'POST':
             user_form = UserForm(data=request.POST)
             user_profile_form = UserProfileForm(request.POST, request.FILES)
-            if request.user.email.find('student') == -1:
+            if not str((user.email).lower()).find('student') > -1:
                 details_form = SupervisorForm(data=request.POST)
 
             else:
@@ -184,7 +184,7 @@ def profile_form(request):
                 profile.topic_choices = request.POST.getlist('topic_choices')
                 profile.save()
 
-                if userObj.email.find('student') == -1:
+                if not str((user.email).lower()).find('student') > -1:
                     details.user_profile = profile
                     details.job_title = request.POST.get('job_title')
                     if(request.POST.get('availability')):
@@ -220,7 +220,7 @@ def profile_form(request):
             user_profile_form.about_me =profile.about_me
             user_profile_form.topic_choices =profile.topic_choices'''
 
-            if not request.user.email.find('student') == -1:
+            if str((user.email).lower()).find('student') > -1:
                 details_form = StudentForm({'degree': details.degree, 'major': details.major, 'advisor': details.advisor, 'advisor_email': details.advisor_email})
 
             else:

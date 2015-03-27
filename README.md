@@ -5,3 +5,4 @@
 5- To login as administrator(un:lama, pw: 1234)
 (Note, all user accounts visible in admin have 1234 as their password)
 6- to populate the database you can use db.json with command: python manage.py loaddata db.json
+7- For registration you need a valid Glasgow student or staff email (@student.gla.ac.uk, @glasgow.ac.uk, @gla.ac.uk)
